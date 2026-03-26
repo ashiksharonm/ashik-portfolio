@@ -370,7 +370,7 @@
           Stack</span>
         <h2 class="text-4xl font-bold tracking-tight">Technical Arsenal</h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
         <div class="glass p-5 rounded-2xl group hover:border-[#a3a6ff]/50 transition-all reveal"
           style="transition-delay:0.05s">
           <span
@@ -426,11 +426,32 @@
         <div class="glass p-5 rounded-2xl group hover:border-white/30 transition-all reveal"
           style="transition-delay:0.3s">
           <span class="ms text-white text-3xl mb-3 block group-hover:scale-110 transition-transform">cloud</span>
-          <h3 class="font-bold text-sm mb-2">Cloud / MLOps</h3>
+          <h3 class="font-bold text-sm mb-2">Cloud Infrastructure</h3>
           <div class="flex flex-wrap gap-1">
             <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">AWS</span>
-            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Docker</span>
-            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Kubernetes</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">GCP</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Azure</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-blue-400/50 transition-all reveal"
+          style="transition-delay:0.35s">
+          <span class="ms text-blue-400 text-3xl mb-3 block group-hover:scale-110 transition-transform">terminal</span>
+          <h3 class="font-bold text-sm mb-2">DevOps &amp; CI/CD</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Docker/K8s</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">GitHub Actions</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Jenkins</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-pink-400/50 transition-all reveal"
+          style="transition-delay:0.4s">
+          <span
+            class="ms text-pink-400 text-3xl mb-3 block group-hover:scale-110 transition-transform">fact_check</span>
+          <h3 class="font-bold text-sm mb-2">Testing &amp; Agile</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Pytest/Jest</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">TDD</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Scrum</span>
           </div>
         </div>
       </div>
@@ -571,17 +592,43 @@
   <!-- ===== PROJECTS ===== -->
   <section id="work" class="py-32 bg-[#191923]">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-14 reveal">
-        <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest mb-3 block">Selected
-          Works</span>
-        <h2 class="text-5xl font-bold tracking-tighter mb-3">Selected <span class="grad-text">Works.</span></h2>
-        <p class="text-slate-400 max-w-lg text-sm">Full-stack AI systems, ONNX inference optimization, enterprise RAG,
-          C++ systems, and remote sensing research.</p>
+      <div class="mb-14 reveal flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+        <div>
+          <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest mb-3 block">Selected
+            Works</span>
+          <h2 class="text-5xl font-bold tracking-tighter mb-3">Selected <span class="grad-text">Works.</span></h2>
+          <p class="text-slate-400 max-w-lg text-sm">Full-stack AI systems, ONNX inference optimization, enterprise RAG,
+            C++ systems, and remote sensing research.</p>
+        </div>
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap md:justify-end gap-2" id="project-filters">
+          <button
+            class="filter-btn active px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-[#8ce7ff] text-[#0d0d16]"
+            data-filter="all">All</button>
+          <button
+            class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white/5 text-white hover:bg-white/10"
+            data-filter="genai">GenAI &amp; NLP</button>
+          <button
+            class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white/5 text-white hover:bg-white/10"
+            data-filter="cv">Vision / CV</button>
+          <button
+            class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white/5 text-white hover:bg-white/10"
+            data-filter="mlops">Cloud &amp; MLOps</button>
+          <button
+            class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white/5 text-white hover:bg-white/10"
+            data-filter="systems">Systems</button>
+          <button
+            class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white/5 text-white hover:bg-white/10"
+            data-filter="web">Full Stack</button>
+        </div>
       </div>
-      <div class="grid md:grid-cols-12 gap-5">
 
-        <!-- PoliRAG - featured wide -->
-        <div class="md:col-span-7 proj-card group relative rounded-2xl overflow-hidden glass h-[420px]">
+      <div class="grid md:grid-cols-12 gap-5" id="projects-grid">
+
+        <!-- PoliRAG -->
+        <div
+          class="project-card md:col-span-12 lg:col-span-7 proj-card group relative rounded-2xl overflow-hidden glass h-[420px]"
+          data-category="genai">
           <img src="thumb_polirag.png" alt="PoliRAG"
             class="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700" />
           <div
@@ -595,8 +642,7 @@
             </div>
             <h3 class="text-2xl font-bold mb-2">PoliRAG</h3>
             <p class="text-slate-300 text-sm max-w-lg mb-5">Enterprise AI software enabling platform — production-grade
-              RAG with hybrid retrieval (BM25+FAISS), hallucination detection, RBAC multi-tenancy, Prometheus
-              observability, 42-test pytest suite. ≥70% Recall@K.</p>
+              RAG with hybrid retrieval (BM25+FAISS), hallucination detection, RBAC multi-tenancy. ≥70% Recall@K.</p>
             <div class="flex gap-4 items-center">
               <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff]">≥70% Recall@K · ≤15% Hallucination
                 Rate</span>
@@ -609,19 +655,19 @@
         </div>
 
         <!-- WaferDefectX -->
-        <div class="md:col-span-5 proj-card group relative rounded-2xl overflow-hidden glass h-[420px]">
+        <div
+          class="project-card md:col-span-12 lg:col-span-5 proj-card group relative rounded-2xl overflow-hidden glass h-[420px]"
+          data-category="cv">
           <img src="thumb_waferdefect.png" alt="WaferDefectX"
             class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-45 group-hover:scale-105 transition-all duration-700" />
           <div
             class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/50 to-transparent p-7 flex flex-col justify-end">
-            <div class="flex gap-2 mb-3">
-              <span class="px-3 py-1 bg-orange-500 text-white text-[10px] font-bold rounded-full uppercase">C++</span>
-              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">OpenCV</span>
-              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">ONNX</span>
-            </div>
+            <div class="flex gap-2 mb-3"><span
+                class="px-3 py-1 bg-orange-500 text-white text-[10px] font-bold rounded-full uppercase">C++</span><span
+                class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">OpenCV</span></div>
             <h3 class="text-2xl font-bold mb-2">WaferDefectX</h3>
             <p class="text-slate-300 text-sm mb-5">C++ ML inference pipeline for semiconductor wafer defect detection.
-              gprof profiling achieved 4× speedup (8.6ms→2.1ms); 100k op benchmark; AddressSanitizer validated.</p>
+              gprof profiling achieved 4× speedup (8.6ms→2.1ms).</p>
             <a href="https://github.com/ashiksharonm/WaferDefectX" target="_blank" rel="noopener"
               class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
                 class="ms">arrow_outward</span></a>
@@ -629,19 +675,20 @@
         </div>
 
         <!-- PricePulse -->
-        <div class="md:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]">
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]"
+          data-category="mlops">
           <img src="thumb_pricepulse.png" alt="PricePulse"
             class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
           <div
             class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/60 to-transparent p-6 flex flex-col justify-end">
-            <div class="flex gap-2 mb-2">
-              <span class="px-3 py-1 bg-yellow-500 text-black text-[10px] font-bold rounded-full uppercase">Time
-                Series</span>
-              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">AWS</span>
-            </div>
+            <div class="flex gap-2 mb-2"><span
+                class="px-3 py-1 bg-yellow-500 text-black text-[10px] font-bold rounded-full uppercase">Time
+                Series</span><span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">AWS
+                CI/CD</span></div>
             <h3 class="text-xl font-bold mb-1">PricePulse</h3>
             <p class="text-slate-300 text-xs mb-4">Inflation-driven pricing strategy AI. Automated CPI data pipeline,
-              3–6 month forecasting, 90% effort reduction via GitHub Actions CI/CD, executive PDF deck generation.</p>
+              3–6 month forecasting, 90% effort reduction via CI/CD.</p>
             <a href="https://github.com/ashiksharonm/PricePulse--Inflation-driven-Pricing-Strategy" target="_blank"
               rel="noopener"
               class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
@@ -649,53 +696,148 @@
           </div>
         </div>
 
-        <!-- SAR Classification -->
-        <div class="md:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]">
+        <!-- ESC-Net  -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]"
+          data-category="cv">
+          <img src="thumb_escnet.png" alt="ESC-Net"
+            class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/60 to-transparent p-6 flex flex-col justify-end">
+            <div class="flex gap-2 mb-2"><span
+                class="px-3 py-1 bg-green-400 text-black text-[10px] font-bold rounded-full uppercase">Deep
+                Learning</span><span
+                class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">PyTorch</span></div>
+            <h3 class="text-xl font-bold mb-1">ESC-Net SAR Colorizer</h3>
+            <p class="text-slate-300 text-xs mb-4">ColorSAR benchmarked CBAM-Enhanced ResNet34 model transforming
+              grayscale SAR imagery to realistic optical colors (SSIM ~0.94).</p>
+            <a href="https://github.com/ashiksharonm/esc-net-sar-image-colorizer" target="_blank" rel="noopener"
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
+                class="ms text-sm">arrow_outward</span></a>
+          </div>
+        </div>
+
+        <!-- Zero-Shot SAR Classification -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]"
+          data-category="cv">
           <img src="thumb_sarclip.png" alt="Zero-Shot SAR"
             class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
           <div
             class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/60 to-transparent p-6 flex flex-col justify-end">
-            <div class="flex gap-2 mb-2">
-              <span
-                class="px-3 py-1 bg-[#8ce7ff]/20 text-[#8ce7ff] text-[10px] font-bold rounded-full uppercase">Research</span>
-              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">CLIP</span>
-            </div>
-            <h3 class="text-xl font-bold mb-1">Zero-Shot SAR · CLIP VLM</h3>
+            <div class="flex gap-2 mb-2"><span
+                class="px-3 py-1 bg-[#8ce7ff] text-[#0d0d16] text-[10px] font-bold rounded-full uppercase">Research</span><span
+                class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">CLIP VLM</span></div>
+            <h3 class="text-xl font-bold mb-1">Zero-Shot SAR</h3>
             <p class="text-slate-300 text-xs mb-4">IEEE submission. CLIP ViT-L/14 on 27k EuroSAT SAR images; 44.26%
-              hierarchy-aware accuracy — 3.4× over random baseline. Zero labeled training data.</p>
+              hierarchy-aware accuracy — 3.4× over random baseline.</p>
             <a href="https://github.com/ashiksharonm/Zero-Shot-SAR-Classification" target="_blank" rel="noopener"
               class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
                 class="ms text-sm">arrow_outward</span></a>
           </div>
         </div>
 
-        <!-- Mini cards row -->
+        <!-- SentiVision -->
         <div
-          class="md:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[320px] relative overflow-hidden">
-          <img src="thumb_summllm.png" alt="SummarizationBench"
-            class="absolute inset-0 w-full h-full object-cover opacity-10" />
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[320px] relative overflow-hidden"
+          data-category="genai">
+          <img src="thumb_sentivision.png" alt="SentiVision"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
           <div class="relative z-10 flex flex-col h-full justify-between">
             <div>
-              <div class="flex justify-between items-start mb-2">
-                <span class="px-3 py-1 bg-[#ac8aff]/20 text-[#ac8aff] text-[10px] font-bold rounded-full uppercase">LoRA
-                  / PEFT</span>
-                <a href="https://github.com/ashiksharonm/SummarizationBench-LLM" target="_blank" rel="noopener"
-                  class="text-[#ac8aff] hover:text-white transition-colors"><span
-                    class="ms text-sm">arrow_outward</span></a>
-              </div>
-              <h4 class="font-bold mb-2 text-base">SummarizationBench-LLM</h4>
-              <p class="text-xs text-slate-400">T5-small fine-tuned with LoRA (294K params); ROUGE-L 0.278; 4× latency
-                reduction vs baseline. Benchmarked LoRA T5, BART-CNN, Gemini 1.5 Pro.</p>
+              <div class="flex justify-between items-start mb-2"><span
+                  class="px-3 py-1 bg-pink-500/20 text-pink-400 text-[10px] font-bold rounded-full uppercase">Streaming
+                  NLP</span></div>
+              <h4 class="font-bold mb-2 text-base">SentiVision Streaming AI</h4>
+              <p class="text-xs text-slate-400">Distributed OCR & Sentiment Analysis platform utilizing a Gemini model.
+                Real-time NLP pipelines mapped into positive/negative neural pathways over Kafka.</p>
             </div>
-            <div class="text-[10px] font-['JetBrains_Mono'] text-[#ac8aff]">Python · PyTorch · HuggingFace · LoRA</div>
+            <div class="flex justify-between items-end mt-4">
+              <div class="text-[10px] font-['JetBrains_Mono'] text-pink-400">Kafka · Gemini · FAISS</div>
+              <a href="https://github.com/ashiksharonm/SentiVision---Sentiment-Analysis-with-OCR-and-Kafka"
+                target="_blank" rel="noopener" class="text-pink-400 hover:text-white transition-colors"><span
+                  class="ms text-sm">arrow_outward</span></a>
+            </div>
           </div>
         </div>
 
-        <!-- libmalloc -->
+        <!-- MCP Server POC -->
         <div
-          class="md:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden">
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[320px] relative overflow-hidden"
+          data-category="genai">
+          <img src="thumb_mcpserver.png" alt="MCP Server POC"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2"><span
+                  class="px-3 py-1 bg-purple-500/20 text-purple-400 text-[10px] font-bold rounded-full uppercase">Agent
+                  Tools</span></div>
+              <h4 class="font-bold mb-2 text-base">MCP Server Agent Gateway</h4>
+              <p class="text-xs text-slate-400">Model Context Protocol server. Exposes structured, validated, and
+                auditable tool executions for LLMs, preventing unsafe query invocations.</p>
+            </div>
+            <div class="flex justify-between items-end mt-4">
+              <div class="text-[10px] font-['JetBrains_Mono'] text-purple-400">FastAPI · Pydantic</div>
+              <a href="https://github.com/ashiksharonm/mcp-server-poc" target="_blank" rel="noopener"
+                class="text-purple-400 hover:text-white transition-colors"><span
+                  class="ms text-sm">arrow_outward</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SBB -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[320px] relative overflow-hidden"
+          data-category="genai">
+          <img src="thumb_summllm.png" alt="SummarizationBench"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2"><span
+                  class="px-3 py-1 bg-[#ac8aff]/20 text-[#ac8aff] text-[10px] font-bold rounded-full uppercase">LoRA /
+                  PEFT</span></div>
+              <h4 class="font-bold mb-2 text-base">SummarizationBench-LLM</h4>
+              <p class="text-xs text-slate-400">T5-small fine-tuned with LoRA (294K params); ROUGE-L 0.278; 4× latency
+                reduction vs baseline. Benchmarked LoRA T5, BART-CNN, Gemini.</p>
+            </div>
+            <div class="flex justify-between items-end mt-4">
+              <div class="text-[10px] font-['JetBrains_Mono'] text-[#ac8aff]">Python · PyTorch</div>
+              <a href="https://github.com/ashiksharonm/SummarizationBench-LLM" target="_blank" rel="noopener"
+                class="text-[#ac8aff] hover:text-white transition-colors"><span
+                  class="ms text-sm">arrow_outward</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- VoteChainAI -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden"
+          data-category="systems">
+          <img src="thumb_votechain.png" alt="VoteChainAI"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span
+                  class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-[10px] font-bold rounded-full uppercase">DApp</span>
+                <a href="https://github.com/ashiksharonm/votechainai" target="_blank" rel="noopener"
+                  class="text-cyan-400 hover:text-white transition-colors"><span
+                    class="ms text-sm">arrow_outward</span></a>
+              </div>
+              <h4 class="font-bold mb-2">VoteChainAI</h4>
+              <p class="text-xs text-slate-400">Blockchain-backed voting platform. Biometric verification with Solidity
+                smart contracts for strict immutability.</p>
+            </div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-cyan-400">Solidity · React · FastAPI</div>
+          </div>
+        </div>
+
+        <!-- DB / libmalloc -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden"
+          data-category="systems">
           <img src="thumb_libmalloc.png" alt="libmalloc"
-            class="absolute inset-0 w-full h-full object-cover opacity-10" />
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
           <div class="relative z-10 flex flex-col h-full justify-between">
             <div>
               <div class="flex justify-between items-start mb-2">
@@ -707,15 +849,85 @@
               </div>
               <h4 class="font-bold mb-2">libmalloc</h4>
               <p class="text-xs text-slate-400">Custom heap allocator in C — free-list with Knuth boundary tags. 100k+
-                glibc benchmarks; 0 leaks; 15/15 unit tests.</p>
+                glibc benchmarks; 0 leaks.</p>
             </div>
-            <div class="text-[10px] font-['JetBrains_Mono'] text-green-400">C · GCC · Valgrind · AddressSanitizer</div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-green-400">C · GCC · Valgrind</div>
+          </div>
+        </div>
+
+        <!-- Smart Campus Analytics -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden"
+          data-category="web">
+          <img src="thumb_smartcampus.png" alt="Smart Campus"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="px-3 py-1 bg-teal-500/20 text-teal-400 text-[10px] font-bold rounded-full uppercase">Full
+                  Stack ML</span>
+                <a href="https://github.com/ashiksharonm/Smart-Campus-Analytics-Platform" target="_blank" rel="noopener"
+                  class="text-teal-400 hover:text-white transition-colors"><span
+                    class="ms text-sm">arrow_outward</span></a>
+              </div>
+              <h4 class="font-bold mb-2">Smart Campus Analytics</h4>
+              <p class="text-xs text-slate-400">Gradient Boosting ML pipeline transforming raw student data into
+                explainable dropout risk intelligence.</p>
+            </div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-teal-400">Docker · Scikit-Learn · FastAPI</div>
+          </div>
+        </div>
+
+        <!-- AWS ML Risk -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden"
+          data-category="mlops">
+          <img src="thumb_awsrisk.png" alt="AWS ML Risk"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span
+                  class="px-3 py-1 bg-orange-500/20 text-orange-400 text-[10px] font-bold rounded-full uppercase">Serverless</span>
+                <a href="https://github.com/ashiksharonm/aws-ml-risk-scoring-service" target="_blank" rel="noopener"
+                  class="text-orange-400 hover:text-white transition-colors"><span
+                    class="ms text-sm">arrow_outward</span></a>
+              </div>
+              <h4 class="font-bold mb-2">AWS ML Risk Scoring</h4>
+              <p class="text-xs text-slate-400">XGBoost credit risk service with SHAP attribution. Sub-second API
+                endpoints hosted on AWS Lambda & Gateway.</p>
+            </div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-orange-400">AWS Lambda · XGBoost</div>
+          </div>
+        </div>
+
+        <!-- Mini Payments API -->
+        <div
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden"
+          data-category="web">
+          <img src="thumb_minipayments.png" alt="Mini Payments"
+            class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all duration-700" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span
+                  class="px-3 py-1 bg-yellow-500/20 text-yellow-500 text-[10px] font-bold rounded-full uppercase">Backend</span>
+                <a href="https://github.com/ashiksharonm/MiniPaymentAPI" target="_blank" rel="noopener"
+                  class="text-yellow-500 hover:text-white transition-colors"><span
+                    class="ms text-sm">arrow_outward</span></a>
+              </div>
+              <h4 class="font-bold mb-2">Mini Payments API</h4>
+              <p class="text-xs text-slate-400">Test-driven Fintech transaction API with strict state-machines, JWT
+                auth, and rigid idempotency locks.</p>
+            </div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-yellow-500">FastAPI · SQLAlchemy</div>
           </div>
         </div>
 
         <!-- AgroVoiceAI -->
         <div
-          class="md:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px]">
+          class="project-card md:col-span-6 lg:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px]"
+          data-category="genai">
           <div>
             <div class="flex justify-between items-start mb-2">
               <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-[10px] font-bold rounded-full uppercase">🏆
@@ -725,11 +937,12 @@
                   class="ms text-sm">arrow_outward</span></a>
             </div>
             <h4 class="font-bold mb-2">AgroVoiceAI</h4>
-            <p class="text-xs text-slate-400">Top 100 statewide – Niral Thiruvizha 2024 (Govt. Tamil Nadu). AI voice
-              assistant for agricultural guidance. Winner – Praestantia 2023.</p>
+            <p class="text-xs text-slate-400">Top 100 statewide – Niral Thiruvizha 2024 (Govt. Tamil Nadu). Multilingual
+              voice assistant for farmers.</p>
           </div>
-          <div class="text-[10px] font-['JetBrains_Mono'] text-yellow-400">Python · NLP · Voice AI</div>
+          <div class="text-[10px] font-['JetBrains_Mono'] text-yellow-400">Python · NLP · Voice APIs</div>
         </div>
+
       </div>
     </div>
   </section>
@@ -781,26 +994,9 @@
                 issues #568 and #579.</p>
             </div>
           </a>
-          <!-- Great Expectations -->
-          <a href="#PASTE_YOUR_GREAT_EXPECTATIONS_PR_LINK_HERE" target="_blank" rel="noopener"
-            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-[#8ce7ff]/50 transition-all duration-300 block">
-            <div
-              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#8ce7ff] transition-colors flex-shrink-0 mt-1">
-              <span class="ms text-[#8ce7ff]">merge</span>
-            </div>
-            <div>
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h4 class="font-bold text-sm">Great Expectations — PR/Feature</h4>
-                <span
-                  class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">CONTRIBUTOR</span>
-              </div>
-              <p class="text-xs text-slate-500">Contributed custom ISBN validation expectation (ISBN-10 Modulo-11,
-                ISBN-13 Modulo-10) to contrib/experimental/ module — extends data quality pipelines for retail and
-                publishing datasets (~10k★).</p>
-            </div>
-          </a>
           <!-- IEEE Paper -->
-          <a href="#PASTE_YOUR_IEEE_DRIVE_LINK_HERE" target="_blank" rel="noopener"
+          <a href="https://drive.google.com/file/d/1plfSqjQZku4OMYDqDCjTYExJ9pEtIOgH/view?usp=drive_link"
+            target="_blank" rel="noopener"
             class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-[#8ce7ff]/50 transition-all duration-300 block">
             <div
               class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#8ce7ff] transition-colors flex-shrink-0 mt-1">
@@ -819,7 +1015,8 @@
             </div>
           </a>
           <!-- Patent 1 -->
-          <a href="#PASTE_YOUR_PATENT_DRIVE_LINK_HERE" target="_blank" rel="noopener"
+          <a href="https://drive.google.com/drive/folders/1bnz96LkwAO_atHDXhylu6OI3w6Xoic24?usp=drive_link"
+            target="_blank" rel="noopener"
             class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-yellow-400/50 transition-all duration-300 block">
             <div
               class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-yellow-400 transition-colors flex-shrink-0 mt-1">
@@ -827,12 +1024,31 @@
             </div>
             <div>
               <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h4 class="font-bold text-sm">Patent Filed — VIT IPR &amp; TT Cell</h4>
+                <h4 class="font-bold text-sm">Patent Filed — Mult-Agent GenAI</h4>
                 <span
                   class="text-[10px] bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">FILED</span>
               </div>
               <p class="text-xs text-slate-500">Adaptive Multi-Agent GenAI System for Automated Legal Contract Drafting
                 &amp; Advisory — 42% turnaround reduction, 98% compliance accuracy across 50 NDA scenarios.</p>
+            </div>
+          </a>
+          <!-- Patent 2 -->
+          <a href="https://drive.google.com/drive/folders/1YsGWdWkw-6PXDHxqW_DQVMVIKt2-18C2?usp=drive_link"
+            target="_blank" rel="noopener"
+            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-yellow-400/50 transition-all duration-300 block">
+            <div
+              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-yellow-400 transition-colors flex-shrink-0 mt-1">
+              <span class="ms text-yellow-400">memory</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h4 class="font-bold text-sm">Patent Filed — SAR Hardware Downlink</h4>
+                <span
+                  class="text-[10px] bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">FILED</span>
+              </div>
+              <p class="text-xs text-slate-500">Hardware-Accelerated Semantic Downlink of SAR Data with
+                Onboard Vision-Language Models. Compression ratio of over 100,000:1 to minimize S-Band downlink
+                bandwidth.</p>
             </div>
           </a>
         </div>
@@ -1171,6 +1387,37 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelector('.ticker-inner').style.animation = 'none';
     }
+    // Project Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-[#8ce7ff]', 'text-[#0d0d16]');
+          b.classList.add('bg-white/5', 'text-white');
+        });
+        // Add active class to clicked
+        btn.classList.add('bg-[#8ce7ff]', 'text-[#0d0d16]');
+        btn.classList.remove('bg-white/5', 'text-white');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'block';
+            card.style.opacity = '0';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.4s ease';
+              card.style.opacity = '1';
+            }, 50);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
   </script>
 </body>
 
