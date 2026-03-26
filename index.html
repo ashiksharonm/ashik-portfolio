@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Ashik Sharon M. | AI/ML Engineer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#0d0d16", "on-surface": "#e7e4f0", "primary": "#a3a6ff", "secondary": "#ac8aff", "tertiary": "#8ce7ff", "on-primary": "#0f00a4", "surface-container": "#191923", "surface-container-low": "#13121c", "surface-container-lowest": "#000000", "on-surface-variant": "#acaab5", "outline": "#76747f" }, fontFamily: { headline: ["Inter"], body: ["Inter"], label: ["Inter"] }, borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" } } } }
+  </script>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: #0d0d16;
+      color: #e7e4f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden
+    }
+
+    .glass {
+      backdrop-filter: blur(24px);
+      background: rgba(25, 25, 35, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08)
+    }
+
+    .grad-text {
+      background: linear-gradient(135deg, #a3a6ff, #ac8aff, #8ce7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .grad-bg {
+      background: linear-gradient(135deg, #a3a6ff, #ac8aff)
+    }
+
+    .orb {
+      filter: blur(160px);
+      pointer-events: none;
+      position: absolute;
+      border-radius: 9999px;
+      opacity: 0.12
+    }
+
+    .ms {
+      font-family: 'Material Symbols Outlined';
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
+
+    .ms-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
+
+    .no-sb::-webkit-scrollbar {
+      display: none
+    }
+
+    .no-sb {
+      -ms-overflow-style: none;
+      scrollbar-width: none
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    /* Hero photo */
+    .hero-photo-wrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 42%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center
+    }
+
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #0d0d16 0%, rgba(13, 13, 22, 0.6) 50%, rgba(13, 13, 22, 0) 100%);
+      z-index: 1
+    }
+
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, #0d0d16, transparent);
+      z-index: 1
+    }
+
+    /* Ticker */
+    @keyframes ticker {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    .ticker-inner {
+      animation: ticker 60s linear infinite;
+      display: flex;
+      gap: 1.5rem;
+      width: max-content
+    }
+
+    .ticker-inner:hover {
+      animation-play-state: paused
+    }
+
+    /* Spin slow */
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .spin-slow {
+      animation: spin-slow 20s linear infinite
+    }
+
+    /* Card hover */
+    .proj-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease
+    }
+
+    .proj-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(163, 166, 255, 0.15)
+    }
+
+    /* Nav active */
+    .nav-active {
+      color: #fff;
+      border-bottom: 2px solid #a3a6ff
+    }
+
+    /* Cert hover */
+    .cert-card {
+      transition: all 0.3s ease
+    }
+
+    .cert-card:hover {
+      border-color: rgba(163, 166, 255, 0.4);
+      transform: translateY(-3px)
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Fixed BG orbs -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden">
+    <div class="orb w-[700px] h-[700px] bg-[#a3a6ff] top-[-15%] left-[-10%]"></div>
+    <div class="orb w-[500px] h-[500px] bg-[#ac8aff] bottom-[-5%] right-[-5%]"></div>
+    <div class="orb w-[350px] h-[350px] bg-[#8ce7ff] top-[35%] right-[5%]"></div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header
+    class="fixed top-0 w-full z-50 bg-[#0d0d16]/50 backdrop-blur-2xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)]">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <span class="font-black text-lg tracking-tight text-white hidden sm:block">Ashik Sharon M.</span>
+      </a>
+      <!-- Links -->
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="font-medium text-sm text-slate-400 hover:text-white transition-colors duration-200 nav-link"
+          href="#work" data-section="work">Work</a>
+        <a class="font-medium text-sm text-slate-400 hover:text-white transition-colors duration-200 nav-link"
+          href="#experience" data-section="experience">Experience</a>
+        <a class="font-medium text-sm text-slate-400 hover:text-white transition-colors duration-200 nav-link"
+          href="#about" data-section="about">About</a>
+        <a class="font-medium text-sm text-slate-400 hover:text-white transition-colors duration-200 nav-link"
+          href="#contact" data-section="contact">Contact</a>
+      </div>
+      <a href="mailto:sharonashik20@gmail.com"
+        class="grad-bg px-6 py-2.5 rounded-full text-white font-semibold text-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(163,166,255,0.4)] transition-all duration-300">Let's
+        Talk</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+    <!-- Photo right side -->
+    <div class="hero-photo-wrap">
+      <img src="profile.jpg" alt="Ashik Sharon M." loading="eager" />
+    </div>
+    <!-- Floating geometry -->
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+      <div class="absolute top-1/4 left-1/6 w-28 h-28 border border-[#a3a6ff] rotate-45 animate-pulse"></div>
+      <div class="absolute top-2/3 left-1/4 w-20 h-20 border border-[#8ce7ff] -rotate-12 animate-pulse"
+        style="animation-delay:1s"></div>
+    </div>
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div class="max-w-[58%]">
+        <div class="flex items-center gap-2 mb-6 reveal-left">
+          <a href="https://github.com/facebookresearch/faiss/pull/4792" target="_blank" rel="noopener"
+            class="glass px-4 py-2 rounded-full text-[11px] font-['JetBrains_Mono'] uppercase tracking-widest flex items-center gap-2 hover:border-[#a3a6ff]/50 transition-colors">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>Meta FAISS PR #4792 Merged
+          </a>
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 reveal-left" style="transition-delay:0.1s">
+          Ashik Sharon <span class="grad-text">M.</span>
+        </h1>
+        <p class="text-xl text-slate-300 font-medium mb-8 reveal-left" style="transition-delay:0.15s">
+          AI/ML Engineer · Ex-Intel · Open Source Contributor
+        </p>
+        <div class="flex flex-wrap gap-3 mb-10 reveal-left" style="transition-delay:0.2s">
+          <span class="glass px-4 py-2 rounded-full font-['JetBrains_Mono'] text-xs text-[#a3a6ff]">Building production
+            AI systems</span>
+          <span class="glass px-4 py-2 rounded-full font-['JetBrains_Mono'] text-xs text-[#ac8aff]">M.Tech CSE · AI
+            &amp; ML · VIT</span>
+          <span class="glass px-4 py-2 rounded-full font-['JetBrains_Mono'] text-xs text-[#8ce7ff]">Chennai,
+            India</span>
+        </div>
+        <div class="flex flex-wrap gap-4 reveal-left" style="transition-delay:0.25s">
+          <a href="#work"
+            class="grad-bg px-10 py-4 rounded-xl font-bold text-base text-white shadow-2xl shadow-[#a3a6ff]/20 hover:scale-105 hover:shadow-[0_0_40px_rgba(163,166,255,0.35)] transition-all duration-300">View
+            Projects</a>
+          <a href="https://drive.google.com/drive/folders/1drOXaWYJwtle5K32rh-PCSqqPbMThuKd" target="_blank"
+            rel="noopener"
+            class="glass px-10 py-4 rounded-xl font-bold text-base hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+            <span class="ms">download</span> Resume
+          </a>
+        </div>
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-6 mt-14 reveal" style="transition-delay:0.35s">
+          <div class="text-center">
+            <div class="text-3xl font-black text-[#a3a6ff] font-['JetBrains_Mono']">8M+</div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-['JetBrains_Mono']">Intel Exp.</div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div class="text-center">
+            <div class="text-3xl font-black text-[#ac8aff] font-['JetBrains_Mono']">12K★</div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-['JetBrains_Mono']">FAISS Stars</div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div class="text-center">
+            <div class="text-3xl font-black text-[#8ce7ff] font-['JetBrains_Mono']">4×</div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-['JetBrains_Mono']">Speedup</div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div class="text-center">
+            <div class="text-3xl font-black text-white font-['JetBrains_Mono']">9.43</div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-['JetBrains_Mono']">M.Tech CGPA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="py-32 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+      <div class="space-y-6 reveal-left">
+        <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest">About Me</span>
+        <h2 class="text-4xl font-bold tracking-tight leading-tight">Engineering the next generation of <span
+            class="grad-text">Intelligence.</span></h2>
+        <div class="glass p-8 rounded-2xl leading-relaxed text-slate-400 space-y-4 text-sm">
+          <p>Software Engineer with <span class="text-white font-medium">8 months of production experience at Intel
+              Technology India</span> (Bengaluru, CCG/AI Engineering), building AI-enabled enterprise software, Python
+            services on Linux and Windows, and production-grade <span class="text-white font-medium">C++ and C
+              systems</span>.</p>
+          <p>Delivered a <span class="text-white font-medium">4× inference speedup</span> through systematic C++ code
+            optimization (gprof profiling, Python-to-C++ migration) and <span class="text-white font-medium">ONNX-based
+              cross-platform AI framework deployment</span>.</p>
+          <p>Open-source contributor to <span class="text-white font-medium">Meta FAISS (~12k★)</span> and <span
+              class="text-white font-medium">Google DeepMind Gemma</span>. University Rank Holder from <span
+              class="text-white font-medium">LICET, Anna University</span> (CGPA 9.16). Pursuing M.Tech at <span
+              class="text-white font-medium">VIT Vellore</span> (CGPA 9.43).</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 reveal-right">
+        <div class="glass p-6 rounded-2xl text-center hover:border-[#a3a6ff]/40 transition-all duration-300">
+          <div class="text-4xl font-black text-[#a3a6ff] font-['JetBrains_Mono']">4×</div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-['JetBrains_Mono']">Inference
+            Speedup</div>
+        </div>
+        <div class="glass p-6 rounded-2xl text-center hover:border-[#ac8aff]/40 transition-all duration-300">
+          <div class="text-4xl font-black text-[#ac8aff] font-['JetBrains_Mono']">3</div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-['JetBrains_Mono']">OSS
+            Contributions</div>
+        </div>
+        <div class="glass p-6 rounded-2xl text-center hover:border-[#8ce7ff]/40 transition-all duration-300">
+          <div class="text-4xl font-black text-[#8ce7ff] font-['JetBrains_Mono']">9.43</div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-['JetBrains_Mono']">M.Tech CGPA
+          </div>
+        </div>
+        <div class="glass p-6 rounded-2xl text-center hover:border-white/20 transition-all duration-300">
+          <div class="text-4xl font-black text-white font-['JetBrains_Mono']">8+</div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-500 mt-2 font-['JetBrains_Mono']">Certifications
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="py-28 bg-[#13121c]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-14 reveal">
+        <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest mb-3 block">Core
+          Stack</span>
+        <h2 class="text-4xl font-bold tracking-tight">Technical Arsenal</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="glass p-5 rounded-2xl group hover:border-[#a3a6ff]/50 transition-all reveal"
+          style="transition-delay:0.05s">
+          <span
+            class="ms text-[#a3a6ff] text-3xl mb-3 block group-hover:scale-110 transition-transform">psychology</span>
+          <h3 class="font-bold text-sm mb-2">AI Inference</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">ONNX</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">OpenVINO</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">TensorRT</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-orange-500/50 transition-all reveal"
+          style="transition-delay:0.1s">
+          <span class="ms text-orange-400 text-3xl mb-3 block group-hover:scale-110 transition-transform">code</span>
+          <h3 class="font-bold text-sm mb-2">C++ / C</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">gprof</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">CMake</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">GCC/Clang</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-[#ac8aff]/50 transition-all reveal"
+          style="transition-delay:0.15s">
+          <span class="ms text-[#ac8aff] text-3xl mb-3 block group-hover:scale-110 transition-transform">hub</span>
+          <h3 class="font-bold text-sm mb-2">LLM &amp; GenAI</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">PyTorch</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">LoRA/PEFT</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">LangChain</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-[#8ce7ff]/50 transition-all reveal"
+          style="transition-delay:0.2s">
+          <span class="ms text-[#8ce7ff] text-3xl mb-3 block group-hover:scale-110 transition-transform">database</span>
+          <h3 class="font-bold text-sm mb-2">Vector DBs</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">FAISS</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">LlamaIndex</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">BM25</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-green-400/50 transition-all reveal"
+          style="transition-delay:0.25s">
+          <span
+            class="ms text-green-400 text-3xl mb-3 block group-hover:scale-110 transition-transform">visibility</span>
+          <h3 class="font-bold text-sm mb-2">Vision / CV</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">CLIP</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">OpenCV</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">CBAM</span>
+          </div>
+        </div>
+        <div class="glass p-5 rounded-2xl group hover:border-white/30 transition-all reveal"
+          style="transition-delay:0.3s">
+          <span class="ms text-white text-3xl mb-3 block group-hover:scale-110 transition-transform">cloud</span>
+          <h3 class="font-bold text-sm mb-2">Cloud / MLOps</h3>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">AWS</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Docker</span>
+            <span class="text-[9px] font-['JetBrains_Mono'] bg-white/5 px-2 py-0.5 rounded-full">Kubernetes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="py-32 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-center reveal">Professional <span class="grad-text">Timeline.</span></h2>
+      <p class="text-center text-slate-500 mb-16 font-['JetBrains_Mono'] text-xs uppercase tracking-widest reveal">
+        Experience &amp; Education</p>
+      <div
+        class="relative space-y-10 before:absolute before:inset-0 before:ml-5 md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-white/15 before:to-transparent">
+
+        <!-- Intel -->
+        <div class="relative flex items-start md:justify-normal md:odd:flex-row-reverse group reveal">
+          <div
+            class="flex items-center justify-center w-10 h-10 rounded-full border border-[#a3a6ff]/50 bg-[#0d0d16] z-10 absolute left-0 md:left-1/2 md:-ml-5 mt-1 group-hover:scale-125 group-hover:border-[#a3a6ff] transition-all duration-300">
+            <div class="w-2.5 h-2.5 rounded-full bg-[#a3a6ff]"></div>
+          </div>
+          <div
+            class="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] glass p-7 rounded-2xl ml-14 md:ml-0 hover:border-[#a3a6ff]/30 transition-all duration-300">
+            <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
+              <h3 class="text-lg font-bold">Intel Technology India Pvt. Ltd.</h3>
+              <time
+                class="font-['JetBrains_Mono'] text-[10px] text-[#a3a6ff] bg-[#a3a6ff]/10 px-2 py-1 rounded-full">Jul
+                2025 – Feb 2026</time>
+            </div>
+            <div class="text-[#ac8aff] text-sm font-semibold mb-1">Graduate Technical Intern – AI Engineering</div>
+            <div class="text-slate-500 text-[11px] mb-4 font-['JetBrains_Mono']">CCG / AI Engineering · Bengaluru</div>
+            <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+              <li>Developed Python-based AI software services within Intel CCG on <strong class="text-slate-200">Linux
+                  (Docker/Kubernetes)</strong> and Windows; reduced manual processing by <strong
+                  class="text-[#a3a6ff]">38%</strong>, response time by <strong class="text-[#a3a6ff]">40%</strong>.
+              </li>
+              <li>Built enterprise <strong class="text-slate-200">GraphRAG platform</strong> (LlamaIndex, knowledge
+                graphs, multi-hop traversal); improved retrieval accuracy by <strong
+                  class="text-[#a3a6ff]">32%</strong>, lookup time by <strong class="text-[#a3a6ff]">45%</strong>.</li>
+              <li>Performed proactive debugging and performance monitoring; zero-downtime deployments under enterprise
+                workloads.</li>
+              <li>Tech: Python, Linux, Docker/Kubernetes, ONNX, OpenVINO, LlamaIndex, GraphRAG</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Delonix -->
+        <div class="relative flex items-start md:justify-normal md:odd:flex-row-reverse group reveal">
+          <div
+            class="flex items-center justify-center w-10 h-10 rounded-full border border-[#ac8aff]/50 bg-[#0d0d16] z-10 absolute left-0 md:left-1/2 md:-ml-5 mt-1 group-hover:scale-125 group-hover:border-[#ac8aff] transition-all duration-300">
+            <div class="w-2.5 h-2.5 rounded-full bg-[#ac8aff]"></div>
+          </div>
+          <div
+            class="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] glass p-7 rounded-2xl ml-14 md:ml-0 hover:border-[#ac8aff]/30 transition-all duration-300">
+            <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
+              <h3 class="text-lg font-bold">Delonix Designs</h3>
+              <time
+                class="font-['JetBrains_Mono'] text-[10px] text-[#ac8aff] bg-[#ac8aff]/10 px-2 py-1 rounded-full">Apr
+                2023 – May 2023</time>
+            </div>
+            <div class="text-[#8ce7ff] text-sm font-semibold mb-1">Full Stack Development Intern</div>
+            <div class="text-slate-500 text-[11px] mb-4 font-['JetBrains_Mono']">Chennai</div>
+            <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+              <li>Delivered full-stack features (React + Node.js) supporting 1,000+ records with <strong
+                  class="text-[#ac8aff]">100% transaction reliability</strong>.</li>
+              <li>Followed Agile standards: documentation, code reviews, sprint delivery.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- VIT -->
+        <div class="relative flex items-start md:justify-normal md:odd:flex-row-reverse group reveal">
+          <div
+            class="flex items-center justify-center w-10 h-10 rounded-full border border-[#8ce7ff]/50 bg-[#0d0d16] z-10 absolute left-0 md:left-1/2 md:-ml-5 mt-1 group-hover:scale-125 group-hover:border-[#8ce7ff] transition-all duration-300">
+            <div class="w-2.5 h-2.5 rounded-full bg-[#8ce7ff]"></div>
+          </div>
+          <div
+            class="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] glass p-7 rounded-2xl ml-14 md:ml-0 hover:border-[#8ce7ff]/30 transition-all duration-300">
+            <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
+              <h3 class="text-lg font-bold">Vellore Institute of Technology (VIT)</h3>
+              <time
+                class="font-['JetBrains_Mono'] text-[10px] text-[#8ce7ff] bg-[#8ce7ff]/10 px-2 py-1 rounded-full">Aug
+                2024 – Jun 2026</time>
+            </div>
+            <div class="text-white text-sm font-semibold mb-1">M.Tech – CSE (AI &amp; Machine Learning)</div>
+            <div class="text-slate-500 text-[11px] font-['JetBrains_Mono']">CGPA: 9.43 / 10 · Merit Scholarship Awardee
+              (2024–25)</div>
+          </div>
+        </div>
+
+        <!-- LICET -->
+        <div class="relative flex items-start md:justify-normal md:odd:flex-row-reverse group reveal">
+          <div
+            class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-[#0d0d16] z-10 absolute left-0 md:left-1/2 md:-ml-5 mt-1 group-hover:scale-125 transition-all duration-300">
+            <div class="w-2.5 h-2.5 rounded-full bg-white/60"></div>
+          </div>
+          <div
+            class="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] glass p-7 rounded-2xl ml-14 md:ml-0 hover:border-white/20 transition-all duration-300">
+            <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
+              <h3 class="text-lg font-bold">LICET, Anna University</h3>
+              <time class="font-['JetBrains_Mono'] text-[10px] text-slate-400 bg-white/5 px-2 py-1 rounded-full">Aug
+                2020 – May 2024</time>
+            </div>
+            <div class="text-white text-sm font-semibold mb-1">B.E. – Computer Science &amp; Engineering</div>
+            <div class="text-slate-500 text-[11px] font-['JetBrains_Mono']">CGPA: 9.16 / 10 · <span
+                class="text-yellow-400">University Rank Holder</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="work" class="py-32 bg-[#191923]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-14 reveal">
+        <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest mb-3 block">Selected
+          Works</span>
+        <h2 class="text-5xl font-bold tracking-tighter mb-3">Selected <span class="grad-text">Works.</span></h2>
+        <p class="text-slate-400 max-w-lg text-sm">Full-stack AI systems, ONNX inference optimization, enterprise RAG,
+          C++ systems, and remote sensing research.</p>
+      </div>
+      <div class="grid md:grid-cols-12 gap-5">
+
+        <!-- PoliRAG - featured wide -->
+        <div class="md:col-span-7 proj-card group relative rounded-2xl overflow-hidden glass h-[420px]">
+          <img src="thumb_polirag.png" alt="PoliRAG"
+            class="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/50 to-transparent p-8 flex flex-col justify-end">
+            <div class="flex gap-2 mb-3 flex-wrap">
+              <span
+                class="px-3 py-1 bg-[#a3a6ff] text-[#0f00a4] text-[10px] font-bold rounded-full uppercase">GenAI</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">LangChain</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">FastAPI</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">FAISS</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">PoliRAG</h3>
+            <p class="text-slate-300 text-sm max-w-lg mb-5">Enterprise AI software enabling platform — production-grade
+              RAG with hybrid retrieval (BM25+FAISS), hallucination detection, RBAC multi-tenancy, Prometheus
+              observability, 42-test pytest suite. ≥70% Recall@K.</p>
+            <div class="flex gap-4 items-center">
+              <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff]">≥70% Recall@K · ≤15% Hallucination
+                Rate</span>
+              <a href="https://github.com/ashiksharonm/PoliRAG-Enterprise-Policy-Compliance-Intelligence-Engine"
+                target="_blank" rel="noopener"
+                class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
+                  class="ms">arrow_outward</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WaferDefectX -->
+        <div class="md:col-span-5 proj-card group relative rounded-2xl overflow-hidden glass h-[420px]">
+          <img src="thumb_waferdefect.png" alt="WaferDefectX"
+            class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-45 group-hover:scale-105 transition-all duration-700" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/50 to-transparent p-7 flex flex-col justify-end">
+            <div class="flex gap-2 mb-3">
+              <span class="px-3 py-1 bg-orange-500 text-white text-[10px] font-bold rounded-full uppercase">C++</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">OpenCV</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">ONNX</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">WaferDefectX</h3>
+            <p class="text-slate-300 text-sm mb-5">C++ ML inference pipeline for semiconductor wafer defect detection.
+              gprof profiling achieved 4× speedup (8.6ms→2.1ms); 100k op benchmark; AddressSanitizer validated.</p>
+            <a href="https://github.com/ashiksharonm/WaferDefectX" target="_blank" rel="noopener"
+              class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
+                class="ms">arrow_outward</span></a>
+          </div>
+        </div>
+
+        <!-- PricePulse -->
+        <div class="md:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]">
+          <img src="thumb_pricepulse.png" alt="PricePulse"
+            class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/60 to-transparent p-6 flex flex-col justify-end">
+            <div class="flex gap-2 mb-2">
+              <span class="px-3 py-1 bg-yellow-500 text-black text-[10px] font-bold rounded-full uppercase">Time
+                Series</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">AWS</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">PricePulse</h3>
+            <p class="text-slate-300 text-xs mb-4">Inflation-driven pricing strategy AI. Automated CPI data pipeline,
+              3–6 month forecasting, 90% effort reduction via GitHub Actions CI/CD, executive PDF deck generation.</p>
+            <a href="https://github.com/ashiksharonm/PricePulse--Inflation-driven-Pricing-Strategy" target="_blank"
+              rel="noopener"
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
+                class="ms text-sm">arrow_outward</span></a>
+          </div>
+        </div>
+
+        <!-- SAR Classification -->
+        <div class="md:col-span-4 proj-card group relative rounded-2xl overflow-hidden glass h-[320px]">
+          <img src="thumb_sarclip.png" alt="Zero-Shot SAR"
+            class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/60 to-transparent p-6 flex flex-col justify-end">
+            <div class="flex gap-2 mb-2">
+              <span
+                class="px-3 py-1 bg-[#8ce7ff]/20 text-[#8ce7ff] text-[10px] font-bold rounded-full uppercase">Research</span>
+              <span class="px-3 py-1 bg-white/10 text-[10px] font-bold rounded-full uppercase">CLIP</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">Zero-Shot SAR · CLIP VLM</h3>
+            <p class="text-slate-300 text-xs mb-4">IEEE submission. CLIP ViT-L/14 on 27k EuroSAT SAR images; 44.26%
+              hierarchy-aware accuracy — 3.4× over random baseline. Zero labeled training data.</p>
+            <a href="https://github.com/ashiksharonm/Zero-Shot-SAR-Classification" target="_blank" rel="noopener"
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-colors ml-auto"><span
+                class="ms text-sm">arrow_outward</span></a>
+          </div>
+        </div>
+
+        <!-- Mini cards row -->
+        <div
+          class="md:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[320px] relative overflow-hidden">
+          <img src="thumb_summllm.png" alt="SummarizationBench"
+            class="absolute inset-0 w-full h-full object-cover opacity-10" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="px-3 py-1 bg-[#ac8aff]/20 text-[#ac8aff] text-[10px] font-bold rounded-full uppercase">LoRA
+                  / PEFT</span>
+                <a href="https://github.com/ashiksharonm/SummarizationBench-LLM" target="_blank" rel="noopener"
+                  class="text-[#ac8aff] hover:text-white transition-colors"><span
+                    class="ms text-sm">arrow_outward</span></a>
+              </div>
+              <h4 class="font-bold mb-2 text-base">SummarizationBench-LLM</h4>
+              <p class="text-xs text-slate-400">T5-small fine-tuned with LoRA (294K params); ROUGE-L 0.278; 4× latency
+                reduction vs baseline. Benchmarked LoRA T5, BART-CNN, Gemini 1.5 Pro.</p>
+            </div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-[#ac8aff]">Python · PyTorch · HuggingFace · LoRA</div>
+          </div>
+        </div>
+
+        <!-- libmalloc -->
+        <div
+          class="md:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px] relative overflow-hidden">
+          <img src="thumb_libmalloc.png" alt="libmalloc"
+            class="absolute inset-0 w-full h-full object-cover opacity-10" />
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span
+                  class="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] font-bold rounded-full uppercase">Systems</span>
+                <a href="https://github.com/ashiksharonm/libmalloc" target="_blank" rel="noopener"
+                  class="text-green-400 hover:text-white transition-colors"><span
+                    class="ms text-sm">arrow_outward</span></a>
+              </div>
+              <h4 class="font-bold mb-2">libmalloc</h4>
+              <p class="text-xs text-slate-400">Custom heap allocator in C — free-list with Knuth boundary tags. 100k+
+                glibc benchmarks; 0 leaks; 15/15 unit tests.</p>
+            </div>
+            <div class="text-[10px] font-['JetBrains_Mono'] text-green-400">C · GCC · Valgrind · AddressSanitizer</div>
+          </div>
+        </div>
+
+        <!-- AgroVoiceAI -->
+        <div
+          class="md:col-span-4 proj-card glass p-6 rounded-2xl hover:bg-white/5 flex flex-col justify-between h-[220px]">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-[10px] font-bold rounded-full uppercase">🏆
+                Winner</span>
+              <a href="https://github.com/ashiksharonm/AgroVoiceAI" target="_blank" rel="noopener"
+                class="text-yellow-400 hover:text-white transition-colors"><span
+                  class="ms text-sm">arrow_outward</span></a>
+            </div>
+            <h4 class="font-bold mb-2">AgroVoiceAI</h4>
+            <p class="text-xs text-slate-400">Top 100 statewide – Niral Thiruvizha 2024 (Govt. Tamil Nadu). AI voice
+              assistant for agricultural guidance. Winner – Praestantia 2023.</p>
+          </div>
+          <div class="text-[10px] font-['JetBrains_Mono'] text-yellow-400">Python · NLP · Voice AI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPEN SOURCE & RESEARCH ===== -->
+  <section class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-5 reveal-left">
+          <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest">Scientific
+            Impact</span>
+          <h2 class="text-4xl font-bold tracking-tight">Research &amp; <span class="grad-text">Open Source</span></h2>
+          <p class="text-slate-400 text-sm max-w-md">Contributing to production codebases at scale — from C++
+            open-source ecosystems to deep learning frameworks and international academic research.</p>
+        </div>
+        <div class="space-y-4 reveal-right">
+          <!-- Meta FAISS -->
+          <a href="https://github.com/facebookresearch/faiss/pull/4792" target="_blank" rel="noopener"
+            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-[#a3a6ff]/50 transition-all duration-300 block">
+            <div
+              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#a3a6ff] transition-colors flex-shrink-0 mt-1">
+              <span class="ms text-[#a3a6ff]">merge</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h4 class="font-bold text-sm">Meta FAISS — PR #4792</h4>
+                <span
+                  class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">MERGED</span>
+              </div>
+              <p class="text-xs text-slate-500">Fixed C++ CI build regression — corrected include paths across 5 files,
+                patched CMakeLists.txt in production ~12k★ codebase. Unblocked pending high-value feature PR #4761.</p>
+            </div>
+          </a>
+          <!-- Gemma -->
+          <a href="https://github.com/google-deepmind/gemma/pull/590" target="_blank" rel="noopener"
+            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-[#ac8aff]/50 transition-all duration-300 block">
+            <div
+              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#ac8aff] transition-colors flex-shrink-0 mt-1">
+              <span class="ms text-[#ac8aff]">merge</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h4 class="font-bold text-sm">Google DeepMind Gemma — PR #590</h4>
+                <span
+                  class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">OPEN</span>
+              </div>
+              <p class="text-xs text-slate-500">Resolved runtime crash on Gemma2 models (AttributeError on
+                _Gemma2SpecialTokens); fixed missing f-string in error messages; added 2 regression tests. Resolves
+                issues #568 and #579.</p>
+            </div>
+          </a>
+          <!-- Great Expectations -->
+          <a href="#PASTE_YOUR_GREAT_EXPECTATIONS_PR_LINK_HERE" target="_blank" rel="noopener"
+            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-[#8ce7ff]/50 transition-all duration-300 block">
+            <div
+              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#8ce7ff] transition-colors flex-shrink-0 mt-1">
+              <span class="ms text-[#8ce7ff]">merge</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h4 class="font-bold text-sm">Great Expectations — PR/Feature</h4>
+                <span
+                  class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">CONTRIBUTOR</span>
+              </div>
+              <p class="text-xs text-slate-500">Contributed custom ISBN validation expectation (ISBN-10 Modulo-11,
+                ISBN-13 Modulo-10) to contrib/experimental/ module — extends data quality pipelines for retail and
+                publishing datasets (~10k★).</p>
+            </div>
+          </a>
+          <!-- IEEE Paper -->
+          <a href="#PASTE_YOUR_IEEE_DRIVE_LINK_HERE" target="_blank" rel="noopener"
+            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-[#8ce7ff]/50 transition-all duration-300 block">
+            <div
+              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#8ce7ff] transition-colors flex-shrink-0 mt-1">
+              <span class="ms text-[#8ce7ff]">description</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h4 class="font-bold text-sm">IEEE GRSL — Paper Under Review</h4>
+                <span
+                  class="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">UNDER
+                  REVIEW</span>
+              </div>
+              <p class="text-xs text-slate-500">Zero-Shot Land Cover Classification of SAR-like Imagery using VLMs (CLIP
+                on 27k EuroSAT images; 44.26% hierarchy-aware accuracy, 3.4× over random baseline). IEEE Geoscience
+                &amp; Remote Sensing Letters.</p>
+            </div>
+          </a>
+          <!-- Patent 1 -->
+          <a href="#PASTE_YOUR_PATENT_DRIVE_LINK_HERE" target="_blank" rel="noopener"
+            class="glass p-5 rounded-2xl flex gap-5 items-start group hover:border-yellow-400/50 transition-all duration-300 block">
+            <div
+              class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-yellow-400 transition-colors flex-shrink-0 mt-1">
+              <span class="ms text-yellow-400">lock</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h4 class="font-bold text-sm">Patent Filed — VIT IPR &amp; TT Cell</h4>
+                <span
+                  class="text-[10px] bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full font-['JetBrains_Mono']">FILED</span>
+              </div>
+              <p class="text-xs text-slate-500">Adaptive Multi-Agent GenAI System for Automated Legal Contract Drafting
+                &amp; Advisory — 42% turnaround reduction, 98% compliance accuracy across 50 NDA scenarios.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS TICKER ===== -->
+  <section class="py-16 overflow-hidden bg-[#13121c] border-y border-white/5">
+    <div class="ticker-wrap" style="overflow:hidden">
+      <div class="ticker-inner">
+        <!-- Set 1 -->
+        <a href="https://github.com/ashiksharonm/AgroVoiceAI" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-yellow-400/40 transition-colors">
+          <span class="ms ms-fill text-yellow-400">emoji_events</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Top 100 – Niral
+            Thiruvizha 2024 (Govt. Tamil Nadu)</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1FwzsvLhhi6bsB-TGk2Rp4R66Btcih71Z/view" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-red-400/40 transition-colors">
+          <span class="ms ms-fill text-red-400">emoji_events</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Winner – Praestantia
+            2023 (StockistAI)</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1mYYexb76Cb_pydLyIB0v8pZ0AAN5yc6H/view" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-yellow-400/40 transition-colors">
+          <span class="ms ms-fill text-yellow-400">stars</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Winner – Technoteen
+            2021 (DigiPass App)</span>
+        </a>
+        <a href="https://ude.my/UC-4fd2f42b-22cd-4d08-9dc4-06332e88d2ae" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-green-400/40 transition-colors">
+          <span class="ms ms-fill text-green-400">verified</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">AWS Certified ML –
+            Specialty</span>
+        </a>
+        <a href="https://ude.my/UC-d548f3e7-429d-44e3-bd55-a38a203c2d59" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-purple-400/40 transition-colors">
+          <span class="ms ms-fill text-purple-400">verified</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">AWS GenAI Developer
+            – Professional</span>
+        </a>
+        <a href="https://www.credly.com/badges/ccb0159f-1494-44c5-9ad8-a5e80b59efed/linked_in" target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-blue-400/40 transition-colors">
+          <span class="ms ms-fill text-blue-400">workspace_premium</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">SAP Certified – Data
+            Analyst (Feb 2026)</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/15skDYfri0k7k10dKt7AQUQEQsbnda0F6" target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-white/30 transition-colors">
+          <span class="ms ms-fill text-white">workspace_premium</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">University Rank
+            Holder – Anna University 2024</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/15skDYfri0k7k10dKt7AQUQEQsbnda0F6" target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-[#8ce7ff]/40 transition-colors">
+          <span class="ms ms-fill text-[#8ce7ff]">school</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">VIT Merit
+            Scholarship (2024–25)</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1XqdmzPWBiZe_RlGmOMfrjn3uBuEEOpol" target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-orange-400/40 transition-colors">
+          <span class="ms ms-fill text-orange-400">bolt</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Ashok Leyland
+            Hackathon Finalist (IntelliRoute)</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1b1xtzoaVwwztnTw7bcC0Mqppsoj6e_yg/view" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-pink-400/40 transition-colors">
+          <span class="ms ms-fill text-pink-400">emoji_events</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Winner – Theme Show,
+            Engenia 2023</span>
+        </a>
+        <!-- Set 2 duplicate for seamless loop -->
+        <a href="https://github.com/ashiksharonm/AgroVoiceAI" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-yellow-400/40 transition-colors">
+          <span class="ms ms-fill text-yellow-400">emoji_events</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Top 100 – Niral
+            Thiruvizha 2024 (Govt. Tamil Nadu)</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1FwzsvLhhi6bsB-TGk2Rp4R66Btcih71Z/view" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-red-400/40 transition-colors">
+          <span class="ms ms-fill text-red-400">emoji_events</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">Winner – Praestantia
+            2023 (StockistAI)</span>
+        </a>
+        <a href="https://ude.my/UC-4fd2f42b-22cd-4d08-9dc4-06332e88d2ae" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-green-400/40 transition-colors">
+          <span class="ms ms-fill text-green-400">verified</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">AWS Certified ML –
+            Specialty</span>
+        </a>
+        <a href="https://ude.my/UC-d548f3e7-429d-44e3-bd55-a38a203c2d59" target="_blank" rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-purple-400/40 transition-colors">
+          <span class="ms ms-fill text-purple-400">verified</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">AWS GenAI Developer
+            – Professional</span>
+        </a>
+        <a href="https://www.credly.com/badges/ccb0159f-1494-44c5-9ad8-a5e80b59efed/linked_in" target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-blue-400/40 transition-colors">
+          <span class="ms ms-fill text-blue-400">workspace_premium</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">SAP Certified – Data
+            Analyst (Feb 2026)</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/15skDYfri0k7k10dKt7AQUQEQsbnda0F6" target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 px-7 py-4 glass rounded-full flex-shrink-0 hover:border-white/30 transition-colors">
+          <span class="ms ms-fill text-white">workspace_premium</span>
+          <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest whitespace-nowrap">University Rank
+            Holder – Anna University 2024</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="py-32 px-6 bg-[#191923]">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14 text-center reveal">
+        <span class="font-['JetBrains_Mono'] text-xs text-[#a3a6ff] uppercase tracking-widest mb-3 block">Verified
+          Credentials</span>
+        <h2 class="text-4xl font-bold">Certifications</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="https://ude.my/UC-4fd2f42b-22cd-4d08-9dc4-06332e88d2ae" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.05s">
+          <span class="ms ms-fill text-[#a3a6ff] text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">AWS Certified ML – Specialty</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://ude.my/UC-07d7fbcd-5a01-49ef-b7e4-05b12703a3b3" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.1s">
+          <span class="ms ms-fill text-[#ac8aff] text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">AWS ML Engineer – Associate</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://ude.my/UC-d548f3e7-429d-44e3-bd55-a38a203c2d59" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.15s">
+          <span class="ms ms-fill text-[#8ce7ff] text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">AWS GenAI Developer – Professional</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://ude.my/UC-fee9f641-1bc5-4195-aea3-204a1712f106" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.2s">
+          <span class="ms ms-fill text-orange-400 text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">AWS Solutions Architect – Associate</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://ude.my/UC-53141c66-74b6-4335-891e-a7792467f4c2" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.25s">
+          <span class="ms ms-fill text-green-400 text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">Kubernetes – Absolute Beginners</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://ude.my/UC-ac005ec8-3a67-49fa-985b-6732213f07e5" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.3s">
+          <span class="ms ms-fill text-yellow-400 text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">AWS Data Engineer – Associate</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://ude.my/UC-9b51acfa-b94a-48be-be59-c28cad99338f" target="_blank" rel="noopener"
+          class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.35s">
+          <span class="ms ms-fill text-slate-400 text-2xl mb-3 block">verified</span>
+          <h4 class="font-bold text-sm mb-1">AWS Cloud Practitioner (CLF-C02)</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Udemy · View ↗</p>
+        </a>
+        <a href="https://www.credly.com/badges/ccb0159f-1494-44c5-9ad8-a5e80b59efed/linked_in" target="_blank"
+          rel="noopener" class="cert-card glass p-5 rounded-2xl reveal" style="transition-delay:0.4s">
+          <span class="ms ms-fill text-blue-400 text-2xl mb-3 block">workspace_premium</span>
+          <h4 class="font-bold text-sm mb-1">SAP Certified – Data Analyst (SAC)</h4>
+          <p class="text-[10px] font-['JetBrains_Mono'] text-slate-500 uppercase">Credly · View ↗</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="py-32 px-6">
+    <div class="max-w-7xl mx-auto glass p-12 md:p-20 rounded-3xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-[#a3a6ff]/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-60 h-60 bg-[#ac8aff]/10 blur-[100px] pointer-events-none"></div>
+      <div class="grid md:grid-cols-2 gap-16 relative z-10">
+        <div class="reveal-left">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+            <span class="text-xs font-['JetBrains_Mono'] uppercase tracking-widest">Open to new opportunities</span>
+          </div>
+          <h2 class="text-5xl font-bold tracking-tighter mb-6 leading-tight">Ready to build the <span
+              class="grad-text">Future?</span></h2>
+          <p class="text-slate-400 mb-10 text-sm">Looking for roles in AI Engineering, ML Systems, or Software
+            Engineering. Let's discuss how I can contribute to your team.</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/in/ashik-sharon-6757011b3" target="_blank" rel="noopener" title="LinkedIn"
+              class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-all duration-300 group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="https://github.com/ashiksharonm" target="_blank" rel="noopener" title="GitHub"
+              class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-all duration-300 group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+            <a href="mailto:sharonashik20@gmail.com" title="Email"
+              class="w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-white hover:text-[#0d0d16] transition-all duration-300 group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <form class="space-y-6 reveal-right" onsubmit="handleContact(event)">
+          <div class="space-y-2">
+            <label class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-slate-500">Your
+              Name</label>
+            <input id="cf-name"
+              class="w-full bg-transparent border-0 border-b border-white/10 px-0 py-3 focus:outline-none focus:border-[#a3a6ff] transition-colors text-white placeholder-slate-600 text-sm"
+              placeholder="Full Name" type="text" required />
+          </div>
+          <div class="space-y-2">
+            <label class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-slate-500">Email
+              Address</label>
+            <input id="cf-email"
+              class="w-full bg-transparent border-0 border-b border-white/10 px-0 py-3 focus:outline-none focus:border-[#a3a6ff] transition-colors text-white placeholder-slate-600 text-sm"
+              placeholder="you@company.com" type="email" required />
+          </div>
+          <div class="space-y-2">
+            <label class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-slate-500">Message</label>
+            <textarea id="cf-msg"
+              class="w-full bg-transparent border-0 border-b border-white/10 px-0 py-3 focus:outline-none focus:border-[#a3a6ff] transition-colors text-white placeholder-slate-600 resize-none text-sm"
+              placeholder="Tell me about your project..." rows="4" required></textarea>
+          </div>
+          <a href="mailto:sharonashik20@gmail.com"
+            class="w-full grad-bg py-4 rounded-xl font-bold text-white hover:shadow-[0_0_40px_rgba(163,166,255,0.4)] transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+            <span class="ms text-lg">send</span> Send Message
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="w-full py-10 border-t border-white/5 bg-[#0d0d16]">
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <span class="font-black text-xl tracking-tight grad-text">ASM</span>
+      <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-widest text-slate-600 text-center">
+        © 2025 Ashik Sharon M. · Chennai, India
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="https://www.linkedin.com/in/ashik-sharon-6757011b3" target="_blank" rel="noopener" title="LinkedIn"
+          class="text-slate-500 hover:text-[#a3a6ff] transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="https://github.com/ashiksharonm" target="_blank" rel="noopener" title="GitHub"
+          class="text-slate-500 hover:text-[#a3a6ff] transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
+        </a>
+        <a href="mailto:sharonashik20@gmail.com" title="Email"
+          class="text-slate-500 hover:text-[#a3a6ff] transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    // Smooth scroll for all nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active nav highlight
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => {
+            l.classList.remove('nav-active');
+            l.style.color = '';
+          });
+          const active = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+          if (active) {
+            active.classList.add('nav-active');
+            active.style.color = '#fff';
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => observer.observe(s));
+
+    // Reveal on scroll
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObs.observe(el));
+
+    // Contact form handler
+    function handleContact(e) {
+      e.preventDefault();
+      const n = document.getElementById('cf-name').value;
+      const m = document.getElementById('cf-msg').value;
+      window.location.href = `mailto:sharonashik20@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(n)}&body=${encodeURIComponent(m)}`;
+    }
+
+    // Pause ticker on reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelector('.ticker-inner').style.animation = 'none';
+    }
+  </script>
+</body>
+
+</html>
