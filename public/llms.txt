@@ -1,0 +1,53 @@
+# Ashik Sharon M
+
+> AI Engineer building agentic systems, RAG pipelines, and MLOps infrastructure.
+
+## Who this is
+
+Ashik Sharon M is an AI Engineer currently at CobuildX.ai (Jun 2026–present), building
+agentic AI features and MCP (Model Context Protocol) tool integrations for WarpX, a
+collaborative workspace platform — a React/TypeScript frontend and a Python FastAPI backend
+on AWS Lambda.
+
+Previously, he was a Graduate Technical Intern in AI Engineering at Intel Technology India
+(Jul 2025–Feb 2026), where he built a multi-agent LLM ticket-automation system (35–45% lower
+model cost) and an enterprise GraphRAG platform (LlamaIndex, Neo4j, FAISS).
+
+He is finishing an M.Tech in Computer Science & Engineering (AI & Machine Learning) at
+Vellore Institute of Technology (VIT), and holds a B.E. in Computer Science and Engineering
+from Loyola-ICAM College of Engineering & Technology (Anna University).
+
+## Patents & research
+
+- Patent application filed: "Adaptive Multi-Agent Generative AI System for Automated Legal
+  Contract Drafting and Advisory" — a multi-agent architecture (Clause Selector, Drafter,
+  Compliance, Verifier) for legal document automation.
+- Patent application filed: "Hardware-Accelerated Semantic Downlink of Synthetic Aperture
+  Radar (SAR) Data with Onboard Vision-Language Models."
+- Paper under review, IEEE GeoScience and Remote Sensing Letters: "Zero-Shot Land Cover
+  Classification of SAR-like Imagery using Vision-Language Models (VLMs)."
+
+## Open source
+
+- Meta FAISS — PR #4792 (merged): fixed a multi-platform CI regression.
+  https://github.com/facebookresearch/faiss/pull/4792
+- Google DeepMind Gemma — PR #590 (merged): fixed a runtime crash in Sampler.sample().
+  https://github.com/google-deepmind/gemma/pull/590
+
+## Selected projects
+
+- PoliRAG — enterprise policy/compliance RAG engine with hybrid BM25+FAISS retrieval.
+  https://github.com/ashiksharonm/PoliRAG-Enterprise-Policy-Compliance-Intelligence-Engine
+- AlphaGuard — production ML defect-detection system for steel manufacturing.
+  https://github.com/ashiksharonm/alphaguard
+- MCP Server POC — an Agent Tool Gateway for LLM-based agents.
+  https://github.com/ashiksharonm/mcp-server-poc
+- libmalloc — a from-scratch C memory allocator.
+  https://github.com/ashiksharonm/libmalloc
+
+## Links
+
+- Portfolio: https://ashiksharonm.github.io/ashik-portfolio/
+- GitHub: https://github.com/ashiksharonm
+- LinkedIn: https://www.linkedin.com/in/ashik-sharon-6757011b3/
+- Email: sharonashik20@gmail.com
