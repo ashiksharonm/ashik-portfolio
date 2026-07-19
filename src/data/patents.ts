@@ -8,14 +8,14 @@ export interface Patent {
 export const patents: Patent[] = [
   {
     title: 'Adaptive Multi-Agent Generative AI System for Automated Legal Contract Drafting and Advisory',
-    status: 'Patent application filed, 2025',
+    status: 'Patent published, 2026',
     description:
       'Designed a multi-agent architecture (Clause Selector, Drafter, Compliance, Verifier) achieving a 92% F1-score in information extraction from dense legal documents using LayoutLMv3, with an HSM-signed WORM audit-log layer for tamper-evident traceability.',
     keywords: ['LayoutLMv3', 'Multi-Agent Systems', 'HSM/TPM Security', 'Natural Language Inference'],
   },
   {
     title: 'Hardware-Accelerated Semantic Downlink of Synthetic Aperture Radar (SAR) Data with Onboard Vision-Language Models',
-    status: 'Patent application filed',
+    status: 'Patent published, 2026',
     description:
       'A "Semantic Downlink" pipeline that reduces satellite-to-ground bandwidth requirements by 95%+, converting high-resolution SAR imagery into high-veracity tactical briefings onboard using a Veracity Enforcement Processor with <250ms per-sentence inference latency.',
     keywords: ['Synthetic Aperture Radar', 'Vision-Language Models', 'Hardware-Enforced Veracity'],
