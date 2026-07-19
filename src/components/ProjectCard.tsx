@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { Project } from '../data/projects'
-import { asset } from '../lib/asset'
+import { coverImageUrl, lockFromSlug } from '../lib/coverImage'
 
 /** Featured project card: subtle mouse-tilt on pointer devices, flat on touch. */
 export default function ProjectCard({ project }: { project: Project }) {
@@ -32,17 +32,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       className="group relative overflow-hidden rounded-xl border border-outline/15 bg-surface-container-low"
     >
       <div className="aspect-video w-full overflow-hidden bg-surface-container">
-        {project.thumb ? (
-          <img
-            src={asset(project.thumb)}
-            alt={project.name}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
-            <span className="font-mono text-xs tracking-widest text-outline">{project.name}</span>
-          </div>
-        )}
+        <img
+          src={coverImageUrl(project.coverKeyword, lockFromSlug(project.slug), 640, 400)}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
       <div className="p-6">
         <h3 className="font-headline text-lg font-semibold text-on-surface">{project.name}</h3>

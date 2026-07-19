@@ -35,7 +35,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-3xl px-6 py-28 md:px-12 lg:px-24">
-      <SectionNode index="10" title="Let's Connect" />
+      <SectionNode index="11" title="Let's Connect" />
       <p className="mb-10 max-w-xl text-on-surface-variant">
         Building something interesting? I'd like to hear about it.
       </p>

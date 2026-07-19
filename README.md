@@ -40,3 +40,11 @@ edit those files to update projects, experience, certifications, etc.
   `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt`.
 - **Social share image**: currently reuses `profile.jpg` for `og:image`/`twitter:image`.
   A dedicated 1200×630 crop would render more cleanly in link previews.
+- **Project cover images**: `src/data/projects.ts` sets a `coverKeyword` per project,
+  resolved to a real (non-AI-generated) stock photo via LoremFlickr in
+  `src/lib/coverImage.ts` (`coverImageUrl()`), pinned per-project with a `lock` value so
+  the same photo shows every time. This is automated keyword→photo matching, not curated
+  — most are a good thematic fit, but a few (see `coverKeyword` values like
+  `'clock,time'` or `'classroom,school'`) are closer to "generic tech/office" than a
+  literal match. Swap any `coverKeyword` value to try a different photo, or replace with
+  a real screenshot by pointing that project's card at a `public/` asset instead.
