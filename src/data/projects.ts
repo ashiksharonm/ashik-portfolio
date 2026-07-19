@@ -8,11 +8,10 @@ export interface Project {
   stack: string[]
   github: string
   demo?: string
-  thumb?: string
+  /** Keyword for a real (non-AI-generated) stock photo cover, resolved via coverImageUrl(). */
+  coverKeyword: string
   featured?: boolean
 }
-
-const THUMBS = 'assets/thumbs/'
 
 export const projects: Project[] = [
   // --- Featured 5 ---
@@ -25,7 +24,7 @@ export const projects: Project[] = [
     stack: ['Python', 'FastAPI', 'OpenAI GPT-4', 'FAISS', 'BM25', 'spaCy', 'Docker', 'Prometheus'],
     github: 'https://github.com/ashiksharonm/PoliRAG-Enterprise-Policy-Compliance-Intelligence-Engine',
     demo: 'https://polirag-enterprise-policy-compliance.streamlit.app/',
-    thumb: THUMBS + 'thumb_polirag.png',
+    coverKeyword: 'law,office',
     featured: true,
   },
   {
@@ -37,6 +36,7 @@ export const projects: Project[] = [
     stack: ['Python', 'scikit-learn', 'XGBoost', 'LightGBM', 'FastAPI', 'Docker Compose', 'Jenkins'],
     github: 'https://github.com/ashiksharonm/alphaguard',
     demo: 'https://huggingface.co/spaces/sharonashik005/alphaguard',
+    coverKeyword: 'manufacturing,factory',
     featured: true,
   },
   {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'FastAPI', 'Solidity', 'Hardhat', 'face-api.js', 'JWT'],
     github: 'https://github.com/ashiksharonm/votechainai',
     demo: 'https://votechainai.duckdns.org',
-    thumb: THUMBS + 'thumb_votechain.png',
+    coverKeyword: 'vote,ballot',
     featured: true,
   },
   {
@@ -59,7 +59,7 @@ export const projects: Project[] = [
       'A from-scratch C memory allocator — malloc/free/realloc/calloc via a doubly-linked free list, boundary-tag coalescing, and double-free detection, verified with ASAN across 10,000+ stress cycles.',
     stack: ['C', 'POSIX', 'GDB', 'AddressSanitizer', 'Valgrind', 'Makefile'],
     github: 'https://github.com/ashiksharonm/libmalloc',
-    thumb: THUMBS + 'thumb_libmalloc.png',
+    coverKeyword: 'computer,circuit',
     featured: true,
   },
   {
@@ -70,7 +70,7 @@ export const projects: Project[] = [
       'An Agent Tool Gateway built on FastAPI + Pydantic — sub-100ms tool dispatch, exponential-backoff fault tolerance, a "Safe SQL" read-only validator, and an automated tool-selection eval harness.',
     stack: ['Python 3.11+', 'FastAPI', 'Pydantic', 'HTTPX', 'Tenacity', 'Aiosqlite', 'Docker'],
     github: 'https://github.com/ashiksharonm/mcp-server-poc',
-    thumb: THUMBS + 'thumb_mcpserver.png',
+    coverKeyword: 'coding,laptop',
     featured: true,
   },
 
@@ -83,6 +83,7 @@ export const projects: Project[] = [
       'A multimodal medical VLM assistant for chest X-ray analysis — CLIP + FAISS retrieval (89% Recall@5), a fine-tuned BLIP model for report generation, and GradCAM interpretability.',
     stack: ['PyTorch', 'HuggingFace (BLIP, CLIP)', 'FAISS', 'FastAPI', 'Streamlit', 'OpenCV'],
     github: 'https://github.com/ashiksharonm/MedVision-LM',
+    coverKeyword: 'hospital,xray',
   },
   {
     slug: 'summarizationbench-llm',
@@ -92,7 +93,7 @@ export const projects: Project[] = [
       'A LoRA-based PEFT pipeline adapting T5-small for summarization — 99.5% fewer trainable parameters than BART-large while retaining 93% of its ROUGE-L accuracy, with a live 3-way model comparison dashboard.',
     stack: ['PyTorch', 'HuggingFace (PEFT/LoRA)', 'Streamlit', 'Plotly', 'ROUGE', 'BLEU'],
     github: 'https://github.com/ashiksharonm/SummarizationBench-LLM',
-    thumb: THUMBS + 'thumb_summllm.png',
+    coverKeyword: 'books,library',
   },
   {
     slug: 'documind-ocr',
@@ -102,6 +103,7 @@ export const projects: Project[] = [
       'A document intelligence API extracting structured data from invoices — a hybrid EasyOCR + Tesseract pipeline with custom OpenCV preprocessing, hitting 95%+ accuracy on standard business documents.',
     stack: ['Python', 'FastAPI', 'EasyOCR', 'Tesseract', 'OpenCV', 'spaCy'],
     github: 'https://github.com/ashiksharonm/DocuMind-OCR-Intelligence',
+    coverKeyword: 'invoice,office',
   },
   {
     slug: 'zero-shot-sar',
@@ -111,7 +113,7 @@ export const projects: Project[] = [
       'Zero-shot land-cover classification for SAR-like satellite imagery using CLIP — 44.26% coarse-level accuracy via hierarchical prompting, benchmarked across 27,000 images. Under review at IEEE GRSL.',
     stack: ['PyTorch', 'CLIP (OpenAI)', 'HuggingFace Datasets', 'Scikit-Learn'],
     github: 'https://github.com/ashiksharonm/Zero-Shot-SAR-Classification',
-    thumb: THUMBS + 'thumb_sarclip.png',
+    coverKeyword: 'satellite,space',
   },
   {
     slug: 'fintech-voice',
@@ -121,6 +123,7 @@ export const projects: Project[] = [
       'A conversational AI agent for B2B debt discovery — LangChain + Pydantic structured-output parsing (95%+ intent accuracy) with a Groq-powered Whisper voice interface cutting speech-to-text latency ~40%.',
     stack: ['Python', 'FastAPI', 'LangChain', 'Groq API', 'Whisper-v3', 'Streamlit', 'Docker Compose'],
     github: 'https://github.com/ashiksharonm/FinTech-Voice-Based-System',
+    coverKeyword: 'microphone,call',
   },
   {
     slug: 'timesyncd',
@@ -130,6 +133,7 @@ export const projects: Project[] = [
       'A distributed clock-synchronization engine in C managing 1,024+ concurrent clients with sub-millisecond precision — Welford\'s online algorithm for O(1) jitter tracking and a zero-copy shared-memory telemetry bridge.',
     stack: ['C', 'POSIX Threads', 'TCP/UDP Sockets', 'Shared Memory (mmap)', 'Makefile'],
     github: 'https://github.com/ashiksharonm/TimeSyncD',
+    coverKeyword: 'clock,time',
   },
   {
     slug: 'legaldoctracker',
@@ -139,6 +143,7 @@ export const projects: Project[] = [
       'A contract-lifecycle management system with polyglot persistence — PostgreSQL for ACID metadata, MongoDB for clause storage, JWT auth, and a state-transition matrix (Draft → Review → Signed).',
     stack: ['Python', 'Django REST Framework', 'PostgreSQL', 'MongoDB', 'JWT', 'Docker'],
     github: 'https://github.com/ashiksharonm/LegalDocTracker',
+    coverKeyword: 'contract,office',
   },
   {
     slug: 'minipaymentapi',
@@ -148,7 +153,7 @@ export const projects: Project[] = [
       'A production-style payments API in Clean Architecture — a Redis-backed idempotency engine guaranteeing zero duplicate charges under concurrent retries, with SQLAlchemy 2.0 + Pydantic v2 type-safety.',
     stack: ['Python 3.10+', 'FastAPI', 'SQLAlchemy 2.0', 'Redis', 'Pydantic v2', 'Pytest'],
     github: 'https://github.com/ashiksharonm/MiniPaymentAPI',
-    thumb: THUMBS + 'thumb_minipayments.png',
+    coverKeyword: 'payment,creditcard',
   },
   {
     slug: 'globalized-course-service',
@@ -158,6 +163,7 @@ export const projects: Project[] = [
       'A locale-aware course metadata service with a 3-tier BCP 47 fallback chain, idempotent progress tracking via PostgreSQL ON CONFLICT, and native RTL support for Arabic without layout duplication.',
     stack: ['Java 17', 'Spring Boot', 'PostgreSQL', 'React', 'TypeScript', 'i18next', 'Testcontainers'],
     github: 'https://github.com/ashiksharonm/globalized-course-service',
+    coverKeyword: 'classroom,school',
   },
   {
     slug: 'collection-campaign-optimizer',
@@ -167,6 +173,7 @@ export const projects: Project[] = [
       'A contextual multi-armed bandit system (LinUCB + Thompson Sampling) for debt-collection channel selection — a 12.5% uplift in recovery reward with SHAP-based real-time decision transparency.',
     stack: ['Python 3.11', 'Contextual Bandits', 'FastAPI', 'SHAP', 'Scikit-learn', 'Docker'],
     github: 'https://github.com/ashiksharonm/CollectionCampaignOptimizer',
+    coverKeyword: 'finance,calculator',
   },
   {
     slug: 'aws-ml-risk-scoring',
@@ -176,7 +183,7 @@ export const projects: Project[] = [
       'An XGBoost credit-default model (81.7% accuracy, 0.77 ROC-AUC) deployed dual-strategy on AWS Lambda and Dockerized EC2, with sub-150ms latency and a GitHub Actions + AWS SAM CI/CD pipeline.',
     stack: ['Python', 'XGBoost', 'AWS (Lambda, EC2, SAM)', 'Docker', 'Caddy', 'GitHub Actions'],
     github: 'https://github.com/ashiksharonm/aws-ml-risk-scoring-service',
-    thumb: THUMBS + 'thumb_awsrisk.png',
+    coverKeyword: 'bank,finance',
   },
   {
     slug: 'waferdefectx',
@@ -186,7 +193,7 @@ export const projects: Project[] = [
       'An automated semiconductor wafer-inspection system — a hybrid classical-CV + CNN pipeline, INT8-quantized and exported to ONNX/OpenVINO for a 4× latency cut (8.6ms → 2.1ms) in production.',
     stack: ['Python', 'C++17', 'OpenCV', 'PyTorch', 'ONNX Runtime', 'OpenVINO'],
     github: 'https://github.com/ashiksharonm/WaferDefectX',
-    thumb: THUMBS + 'thumb_waferdefect.png',
+    coverKeyword: 'semiconductor,factory',
   },
   {
     slug: 'telemetrypulse',
@@ -196,6 +203,7 @@ export const projects: Project[] = [
       'A production-grade IoT event pipeline on Kafka/Redpanda ingesting 5,000+ events/sec from 45+ simulated devices, with exactly-once processing and real-time windowed anomaly detection.',
     stack: ['Python 3.11', 'Apache Kafka (Redpanda)', 'PostgreSQL', 'FastAPI', 'SQLAlchemy', 'Docker'],
     github: 'https://github.com/ashiksharonm/TelemetryPulse',
+    coverKeyword: 'sensor,iot',
   },
   {
     slug: 'pricepulse',
@@ -205,7 +213,7 @@ export const projects: Project[] = [
       'An automated pricing-intelligence pipeline ingesting 10+ years of US CPI data — a SARIMAX forecasting engine (20% lower prediction error than baseline) with auto-generated executive PDF/Excel decks.',
     stack: ['Python (Pandas, Statsmodels, SciPy)', 'OpenPyXL', 'FPDF', 'GitHub Actions'],
     github: 'https://github.com/ashiksharonm/PricePulse--Inflation-driven-Pricing-Strategy',
-    thumb: THUMBS + 'thumb_pricepulse.png',
+    coverKeyword: 'stockmarket,chart',
   },
   {
     slug: 'productgrowthanalysis',
@@ -215,6 +223,7 @@ export const projects: Project[] = [
       'A product growth-analytics engine over Wikipedia pageview data — STL decomposition + rolling Z-scores for anomaly detection, plus a statistical A/B-testing simulator with Cohen\'s d effect sizes.',
     stack: ['Python (Pandas, SciPy, Statsmodels)', 'PostgreSQL', 'Docker', 'GitHub Actions'],
     github: 'https://github.com/ashiksharonm/ProductGrowthAnalysis',
+    coverKeyword: 'analytics,chart',
   },
   {
     slug: 'smart-campus-analytics',
@@ -224,7 +233,7 @@ export const projects: Project[] = [
       'A predictive analytics platform identifying at-risk students with 95% ROC-AUC via Gradient Boosting, deployed as a scalable FastAPI + Docker pipeline scoring 10,000+ students per run.',
     stack: ['Python (Pandas, Scikit-learn)', 'FastAPI', 'Streamlit', 'DuckDB', 'Docker'],
     github: 'https://github.com/ashiksharonm/Smart-Campus-Analytics-Platform',
-    thumb: THUMBS + 'thumb_smartcampus.png',
+    coverKeyword: 'university,campus',
   },
   {
     slug: 'socialsignalbench',
@@ -234,6 +243,7 @@ export const projects: Project[] = [
       'A multimodal engagement-signal benchmark — ResNet-18 transfer learning on audio spectrograms hitting 93.8% validation accuracy, fused with facial-encoder embeddings for HCI behavioral recognition.',
     stack: ['PyTorch', 'TorchAudio', 'TorchVision', 'ResNet-18', 'Librosa', 'Scikit-learn'],
     github: 'https://github.com/ashiksharonm/SocialSignalBench',
+    coverKeyword: 'webcam,camera',
   },
   {
     slug: 'digipass',
@@ -243,6 +253,7 @@ export const projects: Project[] = [
       'A digital bus-pass ecosystem with real-time Firebase sync (99.9% uptime target), an encrypted QR-based validation engine, Google Maps route planning, and a mock payment gateway.',
     stack: ['React Native (Expo SDK)', 'TypeScript', 'Firebase', 'Google Maps API'],
     github: 'https://github.com/ashiksharonm/DigiPass',
+    coverKeyword: 'bus,transport',
   },
   {
     slug: 'decideai',
@@ -253,6 +264,7 @@ export const projects: Project[] = [
     stack: ['C# .NET 7.0', 'Microsoft Semantic Kernel', 'MongoDB', 'Yahoo Finance API', 'Docker'],
     github: 'https://github.com/ashiksharonm/decideAI',
     demo: 'https://decideai-api.onrender.com/swagger/index.html',
+    coverKeyword: 'stockmarket,finance',
   },
 ]
 

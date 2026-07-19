@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import SectionNode from '../components/SectionNode'
 import { archiveProjects, categoryLabels, type ProjectCategory } from '../data/projects'
-import { asset } from '../lib/asset'
+import { coverImageUrl, lockFromSlug } from '../lib/coverImage'
 
 const CATEGORIES: (ProjectCategory | 'all')[] = ['all', 'genai', 'backend', 'mlops', 'data', 'fullstack']
 
@@ -50,19 +50,12 @@ export default function ProjectArchive() {
               className="group flex flex-col overflow-hidden rounded-xl border border-outline/15 bg-surface-container-low transition-colors hover:border-outline/30"
             >
               <div className="aspect-[16/9] w-full overflow-hidden bg-surface-container">
-                {project.thumb ? (
-                  <img
-                    src={asset(project.thumb)}
-                    alt={project.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
-                    <span className="font-mono text-[10px] tracking-widest text-outline">
-                      {categoryLabels[project.category]}
-                    </span>
-                  </div>
-                )}
+                <img
+                  src={coverImageUrl(project.coverKeyword, lockFromSlug(project.slug), 480, 270)}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-headline text-base font-semibold text-on-surface">{project.name}</h3>

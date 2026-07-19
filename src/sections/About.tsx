@@ -13,7 +13,7 @@ export default function About() {
           stack running on AWS Lambda. Before that, at{' '}
           <span className="text-on-surface">Intel Technology India</span>, I built a multi-agent
           LLM ticket-automation system and a GraphRAG knowledge platform on Neo4j and FAISS. I'm
-          finishing an M.Tech in AI &amp; Machine Learning at VIT, alongside two patents filed — one
+          finishing an M.Tech in AI &amp; Machine Learning at VIT, alongside two patents published — one
           on multi-agent legal-drafting AI, one on hardware-accelerated semantic processing for
           satellite SAR data — and a paper under review at IEEE GRSL. Outside of work, I maintain a
           growing set of personal systems projects, from a from-scratch C memory allocator to

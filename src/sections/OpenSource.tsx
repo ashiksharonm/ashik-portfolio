@@ -1,5 +1,6 @@
 import Reveal from '../components/Reveal'
 import SectionNode from '../components/SectionNode'
+import SpotlightCard from '../components/SpotlightCard'
 import { openSource } from '../data/patents'
 
 export default function OpenSource() {
@@ -13,12 +14,7 @@ export default function OpenSource() {
       <div className="grid gap-6 sm:grid-cols-2">
         {openSource.map((contrib, i) => (
           <Reveal key={contrib.link} delay={i * 0.08}>
-            <a
-              href={contrib.link}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex h-full flex-col rounded-xl border border-outline/15 bg-surface-container-low p-6 transition-colors hover:border-tertiary/40"
-            >
+            <SpotlightCard as="a" href={contrib.link} target="_blank" rel="noreferrer" className="group flex h-full flex-col p-6">
               {/* Plain wordmark, no AI-redrawn logos — trademark-safe */}
               <span className="font-headline text-lg font-semibold text-on-surface">{contrib.org}</span>
               <span className="mt-1 font-mono text-xs text-tertiary">{contrib.prLabel}</span>
@@ -26,7 +22,7 @@ export default function OpenSource() {
               <span className="mt-4 text-sm font-medium text-secondary group-hover:underline">
                 View pull request →
               </span>
-            </a>
+            </SpotlightCard>
           </Reveal>
         ))}
       </div>

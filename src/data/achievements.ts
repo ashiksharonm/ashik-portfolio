@@ -29,6 +29,3 @@ export const achievements: Achievement[] = [
     description: 'Proposed StockistAI, a hybrid LSTM + SVM stock trend forecasting model.',
   },
 ]
-
-export const leadershipNote =
-  'Outside of engineering: captained the volleyball team to a Gold Medal at the Chief Minister\'s Trophy 2024 (District Level), and organized Hackwarts, a college-level hackathon at Xplore 2023.'

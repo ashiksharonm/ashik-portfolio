@@ -19,10 +19,10 @@ from Loyola-ICAM College of Engineering & Technology (Anna University).
 
 ## Patents & research
 
-- Patent application filed: "Adaptive Multi-Agent Generative AI System for Automated Legal
+- Patent published (2026): "Adaptive Multi-Agent Generative AI System for Automated Legal
   Contract Drafting and Advisory" — a multi-agent architecture (Clause Selector, Drafter,
   Compliance, Verifier) for legal document automation.
-- Patent application filed: "Hardware-Accelerated Semantic Downlink of Synthetic Aperture
+- Patent published (2026): "Hardware-Accelerated Semantic Downlink of Synthetic Aperture
   Radar (SAR) Data with Onboard Vision-Language Models."
 - Paper under review, IEEE GeoScience and Remote Sensing Letters: "Zero-Shot Land Cover
   Classification of SAR-like Imagery using Vision-Language Models (VLMs)."

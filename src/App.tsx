@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import SignalLine from './components/SignalLine'
 import Hero from './sections/Hero'
+import StatsStrip from './sections/StatsStrip'
 import About from './sections/About'
 import Skills from './sections/Skills'
 import Experience from './sections/Experience'
@@ -10,6 +11,7 @@ import Patents from './sections/Patents'
 import OpenSource from './sections/OpenSource'
 import Certifications from './sections/Certifications'
 import Achievements from './sections/Achievements'
+import OutsideEngineering from './sections/OutsideEngineering'
 import Contact from './sections/Contact'
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
       <SignalLine />
       <main>
         <Hero />
+        <StatsStrip />
         <About />
         <Skills />
         <Experience />
@@ -28,6 +31,7 @@ function App() {
         <OpenSource />
         <Certifications />
         <Achievements />
+        <OutsideEngineering />
         <Contact />
       </main>
       <footer className="border-t border-outline/10 px-6 py-8 text-center text-xs text-on-surface-variant md:px-12">
