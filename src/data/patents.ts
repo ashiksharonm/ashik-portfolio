@@ -24,7 +24,7 @@ export const patents: Patent[] = [
 
 export const researchPaper = {
   title: 'Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models (VLMs)',
-  venue: 'Under review, IEEE GeoScience and Remote Sensing Letters (International)',
+  venue: 'Under review, Journal of Applied Earth Observation and Geoinformation (Elsevier)',
   description:
     '31.5% Top-1 zero-shot accuracy on EuroSAT without any labeled training samples, improved to 44.26% via hierarchical prompting — benchmarked across 27,000 images comparing CLIP ViT-B/32 vs. ViT-L/14.',
 }

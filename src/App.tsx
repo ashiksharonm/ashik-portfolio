@@ -1,6 +1,10 @@
 import Nav from './components/Nav'
 import SignalLine from './components/SignalLine'
+import TickerBar from './components/TickerBar'
+import SocialRow from './components/SocialRow'
 import Hero from './sections/Hero'
+import Offerings from './sections/Offerings'
+import Highlights from './sections/Highlights'
 import StatsStrip from './sections/StatsStrip'
 import About from './sections/About'
 import Skills from './sections/Skills'
@@ -21,6 +25,10 @@ function App() {
       <SignalLine />
       <main>
         <Hero />
+        <TickerBar />
+        <SocialRow />
+        <Offerings />
+        <Highlights />
         <StatsStrip />
         <About />
         <Skills />
@@ -34,7 +42,7 @@ function App() {
         <OutsideEngineering />
         <Contact />
       </main>
-      <footer className="border-t border-outline/10 px-6 py-8 text-center text-xs text-on-surface-variant md:px-12">
+      <footer className="border-t border-outline px-6 py-8 text-center text-xs text-on-surface-variant md:px-12">
         © {new Date().getFullYear()} Ashik Sharon M — built with React, Vite & Framer Motion.
       </footer>
     </div>
