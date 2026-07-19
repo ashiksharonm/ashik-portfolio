@@ -143,7 +143,7 @@ export const projects: Project[] = [
       'A contract-lifecycle management system with polyglot persistence — PostgreSQL for ACID metadata, MongoDB for clause storage, JWT auth, and a state-transition matrix (Draft → Review → Signed).',
     stack: ['Python', 'Django REST Framework', 'PostgreSQL', 'MongoDB', 'JWT', 'Docker'],
     github: 'https://github.com/ashiksharonm/LegalDocTracker',
-    coverKeyword: 'contract,office',
+    coverKeyword: 'lawyer,contract',
   },
   {
     slug: 'minipaymentapi',
@@ -153,7 +153,7 @@ export const projects: Project[] = [
       'A production-style payments API in Clean Architecture — a Redis-backed idempotency engine guaranteeing zero duplicate charges under concurrent retries, with SQLAlchemy 2.0 + Pydantic v2 type-safety.',
     stack: ['Python 3.10+', 'FastAPI', 'SQLAlchemy 2.0', 'Redis', 'Pydantic v2', 'Pytest'],
     github: 'https://github.com/ashiksharonm/MiniPaymentAPI',
-    coverKeyword: 'payment,creditcard',
+    coverKeyword: 'money,wallet',
   },
   {
     slug: 'globalized-course-service',
