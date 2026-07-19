@@ -110,7 +110,7 @@ export const projects: Project[] = [
     name: 'Zero-Shot SAR Land Cover Classification',
     category: 'genai',
     description:
-      'Zero-shot land-cover classification for SAR-like satellite imagery using CLIP — 44.26% coarse-level accuracy via hierarchical prompting, benchmarked across 27,000 images. Under review at IEEE GRSL.',
+      'Zero-shot land-cover classification for SAR-like satellite imagery using CLIP — 44.26% coarse-level accuracy via hierarchical prompting, benchmarked across 27,000 images. Under review at Elsevier.',
     stack: ['PyTorch', 'CLIP (OpenAI)', 'HuggingFace Datasets', 'Scikit-Learn'],
     github: 'https://github.com/ashiksharonm/Zero-Shot-SAR-Classification',
     coverKeyword: 'satellite,space',

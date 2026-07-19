@@ -1,6 +1,34 @@
 @import "tailwindcss";
 
+/* Enables `.dark` class-based toggling for any one-off `dark:` utility use,
+   in addition to the CSS-variable overrides below (which handle the bulk of it). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme (default) — monochrome + blue accent, per the recommended design system. */
 @theme {
+  --color-surface: #fafafa;
+  --color-surface-container: #ffffff;
+  --color-surface-container-low: #f4f4f5;
+  --color-surface-container-lowest: #efeff1;
+  --color-on-surface: #09090b;
+  --color-on-surface-variant: #52525b;
+  --color-outline: #e4e4e7;
+  --color-primary: #18181b;
+  --color-on-primary: #ffffff;
+  --color-secondary: #7c3aed;
+  --color-tertiary: #2563eb;
+
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Archivo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+/* Dark theme override — same token names, dark values. Toggled via a `.dark` class on <html>. */
+.dark {
   --color-surface: #0d0d16;
   --color-surface-container: #191923;
   --color-surface-container-low: #13121c;
@@ -8,18 +36,10 @@
   --color-on-surface: #e7e4f0;
   --color-on-surface-variant: #acaab5;
   --color-outline: #76747f;
-  --color-primary: #a3a6ff;
+  --color-primary: #ffffff;
+  --color-on-primary: #0d0d16;
   --color-secondary: #ac8aff;
   --color-tertiary: #8ce7ff;
-  --color-on-primary: #0f00a4;
-
-  --font-headline: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-
-  --radius-DEFAULT: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
 }
 
 html {
@@ -30,6 +50,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-surface);
   color: var(--color-on-surface);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {

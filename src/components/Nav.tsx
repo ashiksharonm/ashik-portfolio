@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import ThemeToggle from './ThemeToggle'
 
 const LINKS = [
   { href: '#about', label: 'About' },
@@ -41,12 +42,15 @@ export default function Nav() {
           </a>
         ))}
       </nav>
-      <a
-        href="#contact"
-        className="rounded-full border border-outline/40 px-4 py-1.5 text-sm text-on-surface transition-colors hover:border-tertiary hover:text-tertiary"
-      >
-        Let's talk
-      </a>
+      <div className="flex items-center gap-3">
+        <ThemeToggle />
+        <a
+          href="#contact"
+          className="rounded-full border border-outline px-4 py-1.5 text-sm text-on-surface transition-colors hover:border-tertiary hover:text-tertiary"
+        >
+          Let's talk
+        </a>
+      </div>
     </motion.header>
   )
 }

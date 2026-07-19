@@ -24,8 +24,8 @@ from Loyola-ICAM College of Engineering & Technology (Anna University).
   Compliance, Verifier) for legal document automation.
 - Patent published (2026): "Hardware-Accelerated Semantic Downlink of Synthetic Aperture
   Radar (SAR) Data with Onboard Vision-Language Models."
-- Paper under review, IEEE GeoScience and Remote Sensing Letters: "Zero-Shot Land Cover
-  Classification of SAR-like Imagery using Vision-Language Models (VLMs)."
+- Paper under review, Journal of Applied Earth Observation and Geoinformation (Elsevier):
+  "Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models (VLMs)."
 
 ## Open source
 

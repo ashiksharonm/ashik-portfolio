@@ -1,90 +1,151 @@
 import { motion } from 'framer-motion'
+import { ArrowUpRight, Check, Download, Hand } from 'lucide-react'
 import { asset } from '../lib/asset'
+import { quickLinks } from '../data/quickLinks'
+
+const CHECKLIST = [
+  'Ship agents that reach production',
+  'Retrieval that stays accurate at scale',
+  'Evaluate, monitor, iterate — never guess',
+]
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex h-screen min-h-[640px] items-end overflow-hidden">
-      {/* full-bleed cinematic still, code-driven motion only — no AI-generated imagery */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <motion.img
-          src={asset('profile.jpg')}
-          alt="Ashik Sharon M"
-          className="h-full w-full object-cover object-top"
-          initial={{ scale: 1.12 }}
-          animate={{ scale: [1.12, 1.04, 1.1] }}
-          transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-surface/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-surface/70 via-transparent to-surface/40" />
-
+    <section id="home" className="relative overflow-hidden px-6 pb-16 pt-28 md:px-12 lg:px-24">
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -left-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-tertiary/15 blur-[140px]"
-        animate={{ x: [0, 40, 0], y: [0, -20, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-30 blur-[100px]"
+        style={{ background: 'conic-gradient(from 180deg, #2563eb, #7c3aed, #ec4899, #f59e0b, #2563eb)' }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
       />
 
-      <div className="relative z-10 w-full px-6 pb-16 md:px-12 md:pb-20 lg:px-24">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mb-3 font-mono text-xs tracking-[0.3em] text-tertiary"
-        >
-          ASHIK SHARON M · AI ENGINEER
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl font-headline text-4xl font-bold leading-[1.05] text-on-surface sm:text-6xl lg:text-7xl"
-        >
-          I ship agents that actually reach production.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.75 }}
-          className="mt-5 max-w-lg text-base text-on-surface-variant sm:text-lg"
-        >
-          Agentic AI at CobuildX.ai. GraphRAG at Intel. Two patents published, contributions
-          merged into Meta FAISS and Google DeepMind Gemma.
-        </motion.p>
+      <div className="relative mx-auto max-w-6xl">
+        {/* quick nav row */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-8 flex flex-wrap gap-4"
+          transition={{ duration: 0.5 }}
+          className="mb-14 hidden flex-wrap gap-10 sm:flex"
         >
-          <a
-            href="#work"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-on-primary transition-transform hover:scale-105"
-          >
-            View Work
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-outline/50 px-6 py-3 text-sm font-semibold text-on-surface backdrop-blur-sm transition-colors hover:border-tertiary hover:text-tertiary"
-          >
-            Get in Touch
-          </a>
+          {quickLinks.map((link) => (
+            <a key={link.label} href={link.href} className="group">
+              <span className="flex items-center gap-1 text-sm font-semibold text-on-surface">
+                {link.label}
+                <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+              <span className="mt-0.5 block max-w-[10rem] text-xs text-on-surface-variant">{link.description}</span>
+            </a>
+          ))}
         </motion.div>
-      </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.6 }}
-        className="absolute bottom-6 right-6 hidden font-mono text-xs text-on-surface-variant/70 sm:right-12 sm:block"
-      >
-        scroll ↓
-      </motion.div>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
+          <div className="lg:col-span-3">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-surface-container-low text-tertiary"
+            >
+              <motion.div
+                animate={{ rotate: [0, 18, -12, 18, 0] }}
+                transition={{ duration: 1.4, delay: 0.6, ease: 'easeInOut' }}
+              >
+                <Hand size={20} strokeWidth={1.75} />
+              </motion.div>
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-headline text-5xl font-bold leading-[1.05] text-on-surface sm:text-6xl"
+            >
+              Hello! I'm <span className="whitespace-nowrap">Ashik</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-3 flex items-center gap-2 text-xl text-on-surface-variant"
+            >
+              <span className="h-px w-8 bg-outline" />
+              AI Engineer
+              <span className="text-tertiary">✦</span>
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-6 max-w-md text-on-surface-variant"
+            >
+              I'm an <strong className="text-on-surface">AI Engineer</strong>, agentic-systems builder,
+              and <strong className="text-on-surface">RAG</strong> practitioner — currently shipping
+              production MCP agents, previously cutting LLM costs 39% at Intel.
+            </motion.p>
+
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-6 space-y-2"
+            >
+              {CHECKLIST.map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-on-surface">
+                  <Check size={16} className="shrink-0 text-tertiary" strokeWidth={2.5} />
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-8 flex flex-wrap items-center gap-6"
+            >
+              <a
+                href="#contact"
+                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-on-primary transition-transform hover:scale-105"
+              >
+                Let's Talk
+              </a>
+              <a
+                href="/ashik-portfolio/resume.pdf"
+                download
+                className="flex items-center gap-2 text-sm font-semibold text-on-surface underline decoration-outline decoration-2 underline-offset-4 hover:decoration-tertiary"
+              >
+                Download CV
+                <Download size={15} />
+              </a>
+            </motion.div>
+          </div>
+
+          {/* photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative lg:col-span-2"
+          >
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-outline">
+              <img src={asset('profile.jpg')} alt="Ashik Sharon M" className="h-full w-full object-cover object-top" />
+            </div>
+            <motion.div
+              initial={{ scale: 0, rotate: -10 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5, delay: 0.7, type: 'spring' }}
+              className="absolute -bottom-5 -left-5 flex h-24 w-24 items-center justify-center rounded-full bg-primary text-on-primary shadow-lg"
+            >
+              <span className="font-headline text-sm font-bold leading-tight">
+                AI
+                <br />
+                Eng.
+              </span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   )
 }
