@@ -98,7 +98,7 @@ export default function Contact() {
           GitHub
         </a>
         <a
-          href="https://www.linkedin.com/in/ashik-sharon-6757011b3/"
+          href="https://www.linkedin.com/in/ashik-sharon-m-6757011b3/"
           target="_blank"
           rel="noreferrer"
           className="text-on-surface-variant hover:text-tertiary"
