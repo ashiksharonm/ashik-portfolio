@@ -3,7 +3,7 @@ import { GitHubIcon, LinkedInIcon } from './BrandIcons'
 
 const LINKS = [
   { label: 'GitHub', href: 'https://github.com/ashiksharonm', Icon: GitHubIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ashik-sharon-6757011b3/', Icon: LinkedInIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ashik-sharon-m-6757011b3/', Icon: LinkedInIcon },
 ]
 
 export default function SocialRow() {
