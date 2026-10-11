@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '../data/projects'
 import { categoryLabels } from '../data/projects'
-import { coverImageUrl, lockFromSlug } from '../lib/coverImage'
+import { coverImageUrl } from '../lib/coverImage'
 
 export default function CaseStudyCard({ project }: { project: Project }) {
   const href = project.demo ?? project.github
@@ -21,7 +21,7 @@ export default function CaseStudyCard({ project }: { project: Project }) {
           <span className="h-1.5 w-1.5 rounded-full bg-outline" />
         </div>
         <img
-          src={coverImageUrl(project.coverKeyword, lockFromSlug(project.slug), 320, 200)}
+          src={coverImageUrl(project.slug)}
           alt=""
           loading="lazy"
           className="aspect-[8/5] w-full object-cover"

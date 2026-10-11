@@ -7,7 +7,7 @@ export default function Patents() {
     <section id="research" className="mx-auto max-w-4xl px-6 py-28 md:px-12 lg:px-24">
       <SectionNode index="06" title="Patents & Research" />
       <p className="mb-10 max-w-xl text-on-surface-variant">
-        Two patents published, one paper under review — where my engineering turns into IP.
+        Three invention disclosures (not yet filed or granted) and one paper under review.
       </p>
 
       <div className="space-y-6">

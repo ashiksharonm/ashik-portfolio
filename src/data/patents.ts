@@ -8,17 +8,24 @@ export interface Patent {
 export const patents: Patent[] = [
   {
     title: 'Adaptive Multi-Agent Generative AI System for Automated Legal Contract Drafting and Advisory',
-    status: 'Patent published, 2026',
+    status: 'Invention disclosure (IDF-B), VIT IPR & TT Cell — not yet filed or granted',
     description:
-      'Designed a multi-agent architecture (Clause Selector, Drafter, Compliance, Verifier) achieving a 92% F1-score in information extraction from dense legal documents using LayoutLMv3, with an HSM-signed WORM audit-log layer for tamper-evident traceability.',
-    keywords: ['LayoutLMv3', 'Multi-Agent Systems', 'HSM/TPM Security', 'Natural Language Inference'],
+      'A multi-agent architecture (Clause Selector, Drafter, Compliance, Verifier) for contract drafting and advisory, with provenance logging and secure hardware integration for tamper-evident traceability.',
+    keywords: ['Multi-Agent Systems', 'Legal AI', 'Provenance Logging', 'HSM/TPM Security'],
   },
   {
     title: 'Hardware-Accelerated Semantic Downlink of Synthetic Aperture Radar (SAR) Data with Onboard Vision-Language Models',
-    status: 'Patent published, 2026',
+    status: 'Invention disclosure (IDF-B), VIT IPR & TT Cell — not yet filed or granted',
     description:
-      'A "Semantic Downlink" pipeline that reduces satellite-to-ground bandwidth requirements by 95%+, converting high-resolution SAR imagery into high-veracity tactical briefings onboard using a Veracity Enforcement Processor with <250ms per-sentence inference latency.',
-    keywords: ['Synthetic Aperture Radar', 'Vision-Language Models', 'Hardware-Enforced Veracity'],
+      'A "semantic downlink" concept that converts SAR imagery into compact textual briefings onboard using vision-language models and FPGA acceleration, instead of downlinking raw imagery.',
+    keywords: ['Synthetic Aperture Radar', 'Vision-Language Models', 'FPGA'],
+  },
+  {
+    title: 'Dual-Processor Hallucination-Hardened Generative AI Mission Briefing Engine',
+    status: 'Invention disclosure (IDF-B), VIT IPR & TT Cell — not yet filed or granted',
+    description:
+      'A dual-processor design that confines LLM briefing output with hardware-enforced semantic veracity checks, contradiction detection, tiered content gating and a tamper-evident audit trail.',
+    keywords: ['LLM Safety', 'Hallucination Detection', 'Hardware Security'],
   },
 ]
 
@@ -39,16 +46,16 @@ export interface OpenSourceContribution {
 export const openSource: OpenSourceContribution[] = [
   {
     org: 'Meta — FAISS',
-    prLabel: 'PR #4792',
+    prLabel: 'PR #4792 · merged',
     description:
-      "Fixed a multi-platform CI regression, restoring build stability for a vector-search library used at global scale across mission-critical similarity-search workflows.",
+      "Fixed a multi-platform CI build regression in the FAISS vector-search library (merged).",
     link: 'https://github.com/facebookresearch/faiss/pull/4792',
   },
   {
     org: 'Google DeepMind — Gemma',
-    prLabel: 'PR #590',
+    prLabel: 'PR #590 · open',
     description:
-      'Resolved a runtime crash in the Sampler.sample() method of the Gemma2 implementation and added regression tests securing the inference pipeline for a production LLM repository.',
+      'Open PR fixing a runtime crash in Sampler.sample() in the Gemma2 implementation, with regression tests.',
     link: 'https://github.com/google-deepmind/gemma/pull/590',
   },
 ]

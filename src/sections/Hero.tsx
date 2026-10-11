@@ -69,7 +69,7 @@ export default function Hero() {
               className="mt-3 flex items-center gap-2 text-xl text-on-surface-variant"
             >
               <span className="h-px w-8 bg-outline" />
-              AI Engineer
+              AI/ML Engineer Intern
               <span className="text-tertiary">✦</span>
             </motion.p>
 
@@ -79,7 +79,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 max-w-md text-on-surface-variant"
             >
-              I'm an <strong className="text-on-surface">AI Engineer</strong>, agentic-systems builder,
+              I'm an <strong className="text-on-surface">AI/ML Engineer Intern</strong>, agentic-systems builder,
               and <strong className="text-on-surface">RAG</strong> practitioner — currently shipping
               production MCP agents, previously cutting LLM costs 39% at Intel.
             </motion.p>

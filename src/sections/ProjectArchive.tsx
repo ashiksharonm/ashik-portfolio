@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import SectionNode from '../components/SectionNode'
 import { archiveProjects, categoryLabels, type ProjectCategory } from '../data/projects'
-import { coverImageUrl, lockFromSlug } from '../lib/coverImage'
+import { coverImageUrl } from '../lib/coverImage'
 
 const CATEGORIES: (ProjectCategory | 'all')[] = ['all', 'genai', 'backend', 'mlops', 'data', 'fullstack']
 
@@ -51,7 +51,7 @@ export default function ProjectArchive() {
             >
               <div className="aspect-[16/9] w-full overflow-hidden bg-surface-container">
                 <img
-                  src={coverImageUrl(project.coverKeyword, lockFromSlug(project.slug), 480, 270)}
+                  src={coverImageUrl(project.slug)}
                   alt=""
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
