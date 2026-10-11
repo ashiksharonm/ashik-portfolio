@@ -8,17 +8,15 @@ export default function About() {
       <SectionNode index="01" title="About" />
       <Reveal>
         <p className="text-lg leading-relaxed text-on-surface-variant sm:text-xl">
-          I'm an AI Engineer currently building agentic features and MCP tool integrations at{' '}
-          <span className="text-on-surface">CobuildX.ai</span>, on a React/TypeScript and FastAPI
-          stack running on AWS Lambda. Before that, at{' '}
+          I'm an AI/ML Engineer Intern at{' '}
+          <span className="text-on-surface">CobuildX.ai</span>, building agentic workflows with LangGraph
+          and MCP and contributing to an LLM evaluation platform (async eval pipelines on AWS Lambda and SQS). Before that, at{' '}
           <span className="text-on-surface">Intel Technology India</span>, I built a multi-agent
           LLM ticket-automation system and a GraphRAG knowledge platform on Neo4j and FAISS. I'm
-          finishing an M.Tech in AI &amp; Machine Learning at VIT, alongside two patents published — one
-          on multi-agent legal-drafting AI, one on hardware-accelerated semantic processing for
-          satellite SAR data — and a paper under review at Elsevier. Outside of work, I maintain a
+          finishing an M.Tech in AI &amp; Machine Learning at VIT, alongside three invention disclosures at VIT's IPR cell (not yet filed or granted) and a paper under review at Elsevier. Outside of work, I maintain a
           growing set of personal systems projects, from a from-scratch C memory allocator to
-          production-style RAG and ML-serving pipelines, and I've had two bug fixes merged upstream
-          into Meta's FAISS and Google DeepMind's Gemma.
+          production-style RAG and ML-serving pipelines, and I've had a CI fix merged into Meta's
+          FAISS and have an open PR against Google DeepMind's Gemma.
         </p>
       </Reveal>
 

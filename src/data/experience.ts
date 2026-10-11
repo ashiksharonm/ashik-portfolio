@@ -10,18 +10,18 @@ export interface ExperienceEntry {
 
 export const experience: ExperienceEntry[] = [
   {
-    role: 'AI Engineer',
+    role: 'AI/ML Engineer Intern',
     org: 'CobuildX.ai',
     location: 'Chennai, India · On-site',
     period: 'Jun 2026 – Present',
     current: true,
     bullets: [
-      'Building full-stack features for WarpX, an AI-powered collaborative workspace platform: a React + TypeScript frontend and a Python FastAPI backend deployed on AWS Lambda.',
-      'Designed and shipped AI custom agents with MCP (Model Context Protocol) tool integration, giving each agent scoped GitHub repository access for code-aware automated reviews.',
-      'Built a real-time collaborative Kanban task board and audited the production Supabase/Postgres schema for row-level security across the multi-tenant data model.',
-      'Built a config-driven entity-extraction evaluation framework (Precision/Recall/Fβ, Micro/Macro-F1 scoring) for an AI invoice-extraction pipeline, surfacing and fixing real production defects with zero changes to production code.',
+      'Designed and shipped agentic AI workflows using LangGraph with MCP (Model Context Protocol) tool integration, giving agents scoped GitHub repository access for code-aware automated reviews.',
+      'Major contributor to ai01, an LLM evaluation and observability platform: an async evaluation pipeline on AWS Lambda + SQS with DynamoDB atomic-counter completion detection, replacing a synchronous scorer that hit API Gateway\'s 29-second timeout.',
+      'Built multi-agent evaluation (trace-tree trajectory extraction plus toxicity, faithfulness, hallucination and answer-relevancy metrics) for both online and offline runs, and Hungarian-matched entity-extraction benchmarking with dataset versioning (promote-to-golden) and run comparison.',
+      'Added BYOK support across providers via litellm and published ai01-eval, a Python SDK on PyPI with CI score-gating helpers.',
     ],
-    stack: ['React', 'TypeScript', 'Python', 'FastAPI', 'AWS Lambda', 'Supabase', 'Anthropic Claude API', 'MCP'],
+    stack: ['LangGraph', 'MCP', 'Python', 'FastAPI', 'AWS Lambda', 'SQS', 'DynamoDB', 'litellm', 'React', 'TypeScript'],
   },
   {
     role: 'Graduate Technical Intern — AI Engineering',
